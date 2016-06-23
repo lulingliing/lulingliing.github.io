@@ -19,7 +19,8 @@
 首先下载安装一个nodeJS，也可以通过nodeJS下载地址，测试nodeJS是否安装成功，在终端命令行输入node -v，出现v+数字，例：v4.4.5就表示安装成功啦！
 ###git
 下载安装一个git,在终端输入git –version,出现git version+数字，例：git version 2.7.4，就表示已经安装好了，接下来就是搭建">
-<meta property="og:updated_time" content="2016-06-23T09:51:12.000Z">
+<meta property="og:image" content="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/图1.jpg">
+<meta property="og:updated_time" content="2016-06-23T12:15:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第一篇">
 <meta name="twitter:description" content="#搭建hexo博客
@@ -27,6 +28,7 @@
 首先下载安装一个nodeJS，也可以通过nodeJS下载地址，测试nodeJS是否安装成功，在终端命令行输入node -v，出现v+数字，例：v4.4.5就表示安装成功啦！
 ###git
 下载安装一个git,在终端输入git –version,出现git version+数字，例：git version 2.7.4，就表示已经安装好了，接下来就是搭建">
+<meta name="twitter:image" content="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/图1.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Somnus" type="application/atom+xml">
   
@@ -102,14 +104,47 @@
 <p>首先下载安装一个nodeJS，也可以通过<a href="https://nodejs.org/en/" target="_blank" rel="external">nodeJS下载地址</a>，测试nodeJS是否安装成功，在终端命令行输入node -v，出现v+数字，例：v4.4.5就表示安装成功啦！</p>
 <p>###git</p>
 <p>下载安装一个git,在终端输入git –version,出现git version+数字，例：git version 2.7.4，就表示已经安装好了，接下来就是搭建hexo了。</p>
-<p>##步骤</p>
-<p>###1.在终端输入npm install hexo -g 回车，如果报错出现root/Administrator,则输入node npm install hexo -g 回车，则出现如下图：</p>
-<p>![图1])</p>
+<p>##步骤：</p>
+<p>###安装本地hexo</p>
+<p>1.在终端输入npm install hexo -g 回车，如果报错出现root/Administrator,则输入node npm install hexo -g 回车，则出现如下图，输入管理员密码，回车</p>
+<p><img src="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/图1.jpg" alt="图1"></p>
+<p>2.测试hexo是否安装成功，在终端输入hexo回车,如若出现如下图所示的代码，则安装成功。</p>
+<p><img src="" alt="图2">  </p>
+<p>###新建一个文件夹（ps:以桌面创建为例）</p>
+<p>1.在终端输入cd Desktop回车，进入电脑桌面</p>
+<p>2.在终端输入mkdir blog回车，创建了一个名为blog的文件夹</p>
+<p>3.在终端输入cd blog回车，进入该文件夹</p>
+<p>4.当前的blog是空的，在终端输入hexo init,回车，就会出现很多文件夹，初始化blog文件夹，陈成功之后就会是如下图：</p>
+<p><img src="" alt="图3">  </p>
+<p>5.在终端输入hexo server回车，在本地运行，成功之后在终端会出现一个本地博客地址<a href="http://localhost:4000/，点击进入。按住Ctrl+c退出hexo运行" target="_blank" rel="external">http://localhost:4000/，点击进入。按住Ctrl+c退出hexo运行</a></p>
+<p>6.在终端输入hexo g回车，生成HTML文件</p>
+<p>7.在终端输入hexo d回车，发布到线上</p>
+<p>###注册一个账号</p>
+<p>1.在注册界面注册一个用户名，填写一个邮箱与密码，然后直接进入里面</p>
+<p>2.注册一个github账号，在终端输入ssh-keygen,连续回车三次，如下图：</p>
+<p><img src="" alt="图4"> </p>
+<p>3.在终端输入vim ~/.ssh/id_rsa.pub命令，复制ssh-key的值（ps:一个波浪线都不要多复制），在终端输入：q回车，打开本地博客，点击settings,进入里面的SSH and GPG keys，在key的框里将ssh-key的值粘贴进去。</p>
+<p>###验证本机机器与github</p>
+<p>1.在终端输入“git config –global user.name”用户名”（例：git config –global user.name”lulingliing”）</p>
+<p>2.在终端输入“git config –global user.email”邮箱地址”（例：git config –global user.email”1552442072@qq.com”）</p>
+<p>3.在本地博客搭建域名仓库，repository必须与注册的用户名一致。</p>
+<p>###配置config.yml</p>
+<p>1.在blog文件夹中的config.yml文件下的deploy下写空格+git</p>
+<p>2.在本地博客中将域名仓库HTTPS的地址写在repo下（ps:在config.yml中写代码都需要在冒号后面加空格）如下图：</p>
+<p><img src="" alt="图5"> </p>
+<p>这样一个博客就创建成功啦！</p>
+<p>###写博客</p>
+<ul>
+<li><p>先在终端输入hexo new回车，然后按照下面方法进入这些文件夹，blog——source——_posts,该文件夹下就会有一个自己命名的文件。</p>
+</li>
+<li><p>接下来就可以在该文件中写自己的博客了，在终端输入hexo server回车，在本地运行；在终端输入hexo g回车，生成HTML文件；在终端输入hexo d回车，发布到线上，这样就能在线看到你的博客内容啦！</p>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/22/第一篇/" data-id="cips4utx80001h9sli01rqtj0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/22/第一篇/" data-id="cipsa1exe0000sfslwliq0ovi" class="article-share-link">Share</a>
       
       
     </footer>
