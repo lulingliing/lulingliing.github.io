@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>第二篇 | Somnus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="css3的单位与响应式布局倍数单位1. em是相对单位
+相对父级设置和自己的字号设置
+
+注意：h1~h6都有默认的1.5em,当不给h标签设置font-size，就会按照父级的1.5em计算，当给h2设置了font-size,就会按照设置的倍数计算
+&amp;lt;pre&amp;gt;
+&amp;lt;style&amp;gt;
+    .nav{
+        width:500px;
+        height:300">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第二篇">
+<meta property="og:url" content="http://yoursite.com/2016/06/23/第二篇/index.html">
+<meta property="og:site_name" content="Somnus">
+<meta property="og:description" content="css3的单位与响应式布局倍数单位1. em是相对单位
+相对父级设置和自己的字号设置
+
+注意：h1~h6都有默认的1.5em,当不给h标签设置font-size，就会按照父级的1.5em计算，当给h2设置了font-size,就会按照设置的倍数计算
+&amp;lt;pre&amp;gt;
+&amp;lt;style&amp;gt;
+    .nav{
+        width:500px;
+        height:300">
+<meta property="og:updated_time" content="2016-06-23T14:18:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第二篇">
+<meta name="twitter:description" content="css3的单位与响应式布局倍数单位1. em是相对单位
+相对父级设置和自己的字号设置
+
+注意：h1~h6都有默认的1.5em,当不给h标签设置font-size，就会按照父级的1.5em计算，当给h2设置了font-size,就会按照设置的倍数计算
+&amp;lt;pre&amp;gt;
+&amp;lt;style&amp;gt;
+    .nav{
+        width:500px;
+        height:300">
+  
+    <link rel="alternate" href="/atom.xml" title="Somnus" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Somnus</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-第二篇" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/23/第二篇/" class="article-date">
+  <time datetime="2016-06-23T12:45:25.000Z" itemprop="datePublished">2016-06-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      第二篇
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="css3的单位与响应式布局"><a href="#css3的单位与响应式布局" class="headerlink" title="css3的单位与响应式布局"></a>css3的单位与响应式布局</h1><h2 id="倍数单位"><a href="#倍数单位" class="headerlink" title="倍数单位"></a>倍数单位</h2><h3 id="1-em是相对单位"><a href="#1-em是相对单位" class="headerlink" title="1. em是相对单位"></a>1. em是相对单位</h3><ul>
+<li>相对父级设置和自己的字号设置</li>
+</ul>
+<p>注意：h1~h6都有默认的1.5em,当不给h标签设置font-size，就会按照父级的1.5em计算，<br>当给h2设置了font-size,就会按照设置的倍数计算</p>
+<pre><code>&lt;pre&gt;
+&lt;style&gt;
+    .nav{
+        width:500px;
+        height:300px;
+        border:1px red solid;
+        font-size:12px;
+    }
+    .nav p{
+        font-size:4em;
+    }
+    .nav h2{
+        font-size:2em;
+    }
+&lt;/style&gt;
+&lt;div class=“nav”&gt;
+    &lt;p&gt;世界你好&lt;/p&gt;
+    &lt;h2&gt;一切皆有可能&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/pre&gt;
+</code></pre><p>上面的这样计算下来p标签的字号大小为：12<em>4=48px;h2标签的字号大小为12</em>2=24px，但是如果不给h2设置fong-size就会按照父级的1.5em设置，也就是12*1.5=18px;</p>
+<h3 id="2-rem是根单位"><a href="#2-rem是根单位" class="headerlink" title="2.rem是根单位"></a>2.rem是根单位</h3><ul>
+<li>相对于根字体(ps:根据HTML的字号）的大小来设置自己的字号大小</li>
+</ul>
+<p>注意：系统默认的为16px(当HTML没有设置字体的大小就会按照默认的16px计算)，系统最小的字号为12px(ps:当在HTML中设置的字体小于12px,系统会按照最小的12px计算)</p>
+<h2 id="百分比单位"><a href="#百分比单位" class="headerlink" title="百分比单位"></a>百分比单位</h2><ul>
+<li><p>vw,vh是相对于窗口的单位(指宽度跟高度)</p>
+</li>
+<li><p>maxwidth maxheight minwidth minheight 这些是设置的最大的跟最小的宽高度（ps:不是百分比单位，是设置具体的像素）</p>
+</li>
+</ul>
+<h2 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h2><ul>
+<li>响应式布局是根据浏览器的界面大小来改变页面的大小，使用百分比单位，不设置固定的宽高，例：</li>
+</ul>
+<pre><code> &lt;pre&gt;
+   &lt;style&gt;
+        body{
+        margin:0;
+        }
+    ul{
+        margin:0;
+        padding:0;
+        list-style-type: none;
+        }
+    .div1{
+        width: 75%;
+        max-width: 1200px;
+        min-width: 600px;
+        margin:100px auto;
+        background: pink;
+        overflow: hidden;
+        }
+    .div1 li{
+        width: 31%;
+        float: left;
+        min-width: 300px;
+        margin-right: 2%;
+
+        }
+    .div1 img{
+        width:100%; 
+        }
+    &lt;/style&gt;
+   &lt;body&gt;
+&lt;ul  class=&quot;div1&quot;&gt;
+    &lt;li&gt;
+        &lt;img src=&quot;fengjing.jpg&quot; alt=&quot;风景&quot;&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;img src=&quot;fengjing.jpg&quot; alt=&quot;风景&quot;&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;img src=&quot;fengjing.jpg&quot; alt=&quot;风景&quot;&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;img src=&quot;fengjing.jpg&quot; alt=&quot;风景&quot;&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;img src=&quot;fengjing.jpg&quot; alt=&quot;风景&quot;&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;img src=&quot;fengjing.jpg&quot; alt=&quot;风景&quot;&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/body&gt;
+    &lt;/pre&gt;
+</code></pre><p> 运行之后的界面为三列缩小窗口会变成两列甚至是一列，拉大窗口会一直窗口的90%(在不超过设置的最大的宽度下)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/23/第二篇/" data-id="cipxxv4kh00026usl6els9tjp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/27/第三篇/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          第三篇
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/06/22/第一篇/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">第一篇</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/06/27/第三篇/">第三篇</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/23/第二篇/">第二篇</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/22/第一篇/">第一篇</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/22/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 鲁玲玲<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
