@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>第六篇 | Somnus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="css3的圆角设置和背景设置css3盒子机制（box-sizing）
+box-sizing:border-box(怪异模式)
+
+border和padding的值都是计算在width内的
+
+
+box-sizing:content-box(标准盒子模型，在不设置盒子模型的情况下默认该种盒子模型)
+
+border和padding不计算入width内
+
+
+box-sizing:padding-box
+
+p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第六篇">
+<meta property="og:url" content="http://yoursite.com/2016/06/30/第六篇/index.html">
+<meta property="og:site_name" content="Somnus">
+<meta property="og:description" content="css3的圆角设置和背景设置css3盒子机制（box-sizing）
+box-sizing:border-box(怪异模式)
+
+border和padding的值都是计算在width内的
+
+
+box-sizing:content-box(标准盒子模型，在不设置盒子模型的情况下默认该种盒子模型)
+
+border和padding不计算入width内
+
+
+box-sizing:padding-box
+
+p">
+<meta property="og:updated_time" content="2016-06-30T15:20:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第六篇">
+<meta name="twitter:description" content="css3的圆角设置和背景设置css3盒子机制（box-sizing）
+box-sizing:border-box(怪异模式)
+
+border和padding的值都是计算在width内的
+
+
+box-sizing:content-box(标准盒子模型，在不设置盒子模型的情况下默认该种盒子模型)
+
+border和padding不计算入width内
+
+
+box-sizing:padding-box
+
+p">
+  
+    <link rel="alternate" href="/atom.xml" title="Somnus" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Somnus</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-第六篇" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/30/第六篇/" class="article-date">
+  <time datetime="2016-06-30T15:18:40.000Z" itemprop="datePublished">2016-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      第六篇
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="css3的圆角设置和背景设置"><a href="#css3的圆角设置和背景设置" class="headerlink" title="css3的圆角设置和背景设置"></a>css3的圆角设置和背景设置</h2><h3 id="css3盒子机制（box-sizing）"><a href="#css3盒子机制（box-sizing）" class="headerlink" title="css3盒子机制（box-sizing）"></a>css3盒子机制（box-sizing）</h3><ul>
+<li><p>box-sizing:border-box(怪异模式)</p>
+<ul>
+<li>border和padding的值都是计算在width内的</li>
+</ul>
+</li>
+<li><p>box-sizing:content-box(标准盒子模型，在不设置盒子模型的情况下默认该种盒子模型)</p>
+<ul>
+<li>border和padding不计算入width内</li>
+</ul>
+</li>
+<li><p>box-sizing:padding-box</p>
+<ul>
+<li>padding计算在width内，border不计算在内</li>
+</ul>
+</li>
+</ul>
+<h3 id="border设置"><a href="#border设置" class="headerlink" title="border设置"></a>border设置</h3><h4 id="圆角设置"><a href="#圆角设置" class="headerlink" title="圆角设置"></a>圆角设置</h4><ul>
+<li><p>border-radius:10px 20px 30px 40px/50px 60px 70px 80px;</p>
+</li>
+<li><p>含义：左上水平半径 右上水平半径 右下水平半径 左下水平半径/左上垂直半径 右上垂直半径 右下垂直半径 左下垂直半径</p>
+</li>
+</ul>
+<ul>
+<li>值可以设置为px跟百分比，设置半分比的时候就是相对于盒子的百分比</li>
+</ul>
+<h4 id="阴影设置"><a href="#阴影设置" class="headerlink" title="阴影设置"></a>阴影设置</h4><ul>
+<li>box-shadow:3px 4px 5px #000 inset;(text-shadow: 4px 4px 5px black;)</li>
+</ul>
+<ul>
+<li>含义：x-offset偏移3像素的阴影  y-offset偏移4像素的阴影 模糊度为5像素 阴影颜色设置为黑色  inset为内阴影</li>
+</ul>
+<ul>
+<li>box-shadow为盒子的阴影，text-shadow为文字阴影，不同的是文字不能设置内阴影，也就是没有inset属性</li>
+</ul>
+<h4 id="背景设置"><a href="#背景设置" class="headerlink" title="背景设置"></a>背景设置</h4><h5 id="background-origin：content-box-padding-box-border-box"><a href="#background-origin：content-box-padding-box-border-box" class="headerlink" title="background-origin：content-box || padding-box || border-box"></a>background-origin：content-box || padding-box || border-box</h5><ul>
+<li><p>content-box</p>
+<ul>
+<li><p>设置了padding之后，图片不会盖住padding，现在就是相当于背景图跟内容一样，padding了之后是对背景图是有影响的（box-sizing:content-box表示width不包含border和padding，也就是我们以前设置的盒子模型）</p>
+</li>
+<li><p>padding-box</p>
+<ul>
+<li>默认的就是padding-box的形式，也就是背景图是盖住padding的，换句话说看上去就是设置padding对背景图片是没有变化的（box-sizing:padding-box表示width不包含border，包含padding）</li>
+</ul>
+</li>
+<li><p>border-box</p>
+<ul>
+<li>边框会把背景图给盖住，因为图片是从左上角最顶端开始的（box-sizing:border-box表示width既包含border也包含padding）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="background-clip：content-box-padding-box-border-box"><a href="#background-clip：content-box-padding-box-border-box" class="headerlink" title="background-clip：content-box || padding-box || border-box"></a>background-clip：content-box || padding-box || border-box</h5><ul>
+<li>clip中之后content-box有效果，配合padding使用，以内容范围裁剪（剩下的两个值设置的效果是标准盒子下的背景图片设置机制，相当于 background-origin：padding-box ）</li>
+</ul>
+<h4 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h4><h5 id="background-img-linear-gradient-线性渐变"><a href="#background-img-linear-gradient-线性渐变" class="headerlink" title="background-img:linear-gradient(线性渐变)"></a>background-img:linear-gradient(线性渐变)</h5><ul>
+<li><p>repeating-linear-gradient (to left,red 20%,blue 80%)</p>
+<ul>
+<li>含义：重复的线性渐变,（从右）向左，由红色向蓝色渐变，ps:红色在右边</li>
+</ul>
+</li>
+<li><p>linear-gradient（to top left,red 20%,blue 80% ）</p>
+<ul>
+<li>含义：（从右下角）到左上角，由红色向蓝色渐变，ps:红色在右下角</li>
+</ul>
+</li>
+<li><p>linear-gradient（45deg, red 20%,blue 80% ）</p>
+<ul>
+<li>注意：线性渐变设置角度的时候是顺时针旋转</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>属性值解析：渐变的方向，初始颜色值，终止颜色值（颜色值的百分比可以设置为像素，注意终止颜色值的像素值或者是百分比必须大于初始颜色值）</p>
+</li>
+<li><p>可以运用background-size于repeat做出网格效果；例：</p>
+<pre><code>background-image: linear-gradient(to right,pink                 50%,transparent 50%),linear-gradient(to             bottom,blue 50%,black 50%);
+background-size:50px 50px; 
+background-repeat:repeat-x;
+</code></pre></li>
+</ul>
+<p>注意：第一个必须使用transparent（透明色），因为后面的颜色会把前面的颜色盖住</p>
+<h5 id="background-img-radial-gradient-径向渐变-【at是发散范围-at后面是发散的中心点-起止颜色跟终止颜色】"><a href="#background-img-radial-gradient-径向渐变-【at是发散范围-at后面是发散的中心点-起止颜色跟终止颜色】" class="headerlink" title="background-img:radial-gradient(径向渐变)【at是发散范围  at后面是发散的中心点  起止颜色跟终止颜色】"></a>background-img:radial-gradient(径向渐变)【at是发散范围  at后面是发散的中心点  起止颜色跟终止颜色】</h5><ul>
+<li><p>background-image:radial-gradient(circle（ellipse）,red 20%,blue 80%);</p>
+<ul>
+<li>含义：以圆形（椭圆）形式从中心，红色实体占20%开始向蓝色渐变</li>
+</ul>
+</li>
+</ul>
+<h6 id="注意：渐变的形状，ellipse表示椭圆形，circle表示圆形。默认为ellipse，如果元素形状为正方形的元素，则ellipse和circle显示一样"><a href="#注意：渐变的形状，ellipse表示椭圆形，circle表示圆形。默认为ellipse，如果元素形状为正方形的元素，则ellipse和circle显示一样" class="headerlink" title="注意：渐变的形状，ellipse表示椭圆形，circle表示圆形。默认为ellipse，如果元素形状为正方形的元素，则ellipse和circle显示一样"></a>注意：渐变的形状，ellipse表示椭圆形，circle表示圆形。默认为ellipse，如果元素形状为正方形的元素，则ellipse和circle显示一样</h6><ul>
+<li><p>background-image:radial-gradient(at center right,red 20%,blue 80%);</p>
+<ul>
+<li>含义:at center right指的是从中间最后边的位置，从红色渐变到蓝色，红色实体色占百分之二十</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>background-image:radial-gradient( 50px 50px at 10px 10px ,red 20% ,blue 80%);</p>
+<ul>
+<li>含义：渐变后的形状宽高度为50px,在容器的10px 10px的位置处为中心点，从红色渐变到蓝色，红色实体色为20%</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/30/第六篇/" data-id="ciq2gk86400002zslparkjtt6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/06/28/第五篇/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">第五篇</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/06/30/第六篇/">第六篇</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/28/第五篇/">第五篇</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/27/第四篇/">第四篇</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/27/第三篇/">第三篇</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/23/第二篇/">第二篇</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 鲁玲玲<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
