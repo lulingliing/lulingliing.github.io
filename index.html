@@ -64,6 +64,244 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-第七篇" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/01/第七篇/" class="article-date">
+  <time datetime="2016-07-01T07:35:40.000Z" itemprop="datePublished">2016-07-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/01/第七篇/">第七篇</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="transition-过渡"><a href="#transition-过渡" class="headerlink" title="transition 过渡"></a>transition 过渡</h2><h4 id="1-transition-property"><a href="#1-transition-property" class="headerlink" title="1.transition-property:"></a>1.transition-property:</h4><ul>
+<li>执行过渡变换的属性（all 、width、height、left、right、opacity、边框的宽度支持，solid不支持【类型不支持】、font-size、color。。。）</li>
+</ul>
+<h4 id="2-transition-duration："><a href="#2-transition-duration：" class="headerlink" title="2.transition-duration："></a>2.transition-duration：</h4><ul>
+<li>过渡变换延续的时间（单位是s，可以为小数）</li>
+</ul>
+<h4 id="3-transition-timing-function-动画效果"><a href="#3-transition-timing-function-动画效果" class="headerlink" title="3.transition-timing-function:动画效果"></a>3.transition-timing-function:动画效果</h4><ul>
+<li><p>过渡的变化类型（过渡变换的速率效果方式）</p>
+</li>
+<li><p>transition-timing-function类型</p>
+<ul>
+<li><p>(1)ease：先快后满</p>
+</li>
+<li><p>(2)ease-in：先慢后快</p>
+</li>
+<li><p>(3)ease-in-out:慢—&gt;快—&gt;慢</p>
+</li>
+<li><p>(4)ease-out：先快后慢</p>
+</li>
+<li><p>(5)linear（匀速运动）</p>
+</li>
+<li><p>(6)用贝塞尔曲线来定义</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-transition-delay"><a href="#4-transition-delay" class="headerlink" title="4.transition-delay:"></a>4.transition-delay:</h4><ul>
+<li>过渡变换延迟时间</li>
+</ul>
+<h5 id="简写方式"><a href="#简写方式" class="headerlink" title="简写方式"></a>简写方式</h5><h6 id="transition-all-5s-ease-in-out-1s"><a href="#transition-all-5s-ease-in-out-1s" class="headerlink" title="transition:all .5s  ease-in-out 1s;"></a>transition:all .5s  ease-in-out 1s;</h6><h6 id="含义：所有属性在1秒后以慢—-gt-快—-gt-慢的方式播放，播放一次的时间为0-5秒"><a href="#含义：所有属性在1秒后以慢—-gt-快—-gt-慢的方式播放，播放一次的时间为0-5秒" class="headerlink" title="含义：所有属性在1秒后以慢—&gt;快—&gt;慢的方式播放，播放一次的时间为0.5秒"></a>含义：所有属性在1秒后以慢—&gt;快—&gt;慢的方式播放，播放一次的时间为0.5秒</h6><p><img src="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/简写方式.jpg" alt="简写方式"></p>
+<h6 id="注意：设置过渡的时候最好设置一个初始值-transition的效果是需要用-hover才能实现"><a href="#注意：设置过渡的时候最好设置一个初始值-transition的效果是需要用-hover才能实现" class="headerlink" title="[注意：设置过渡的时候最好设置一个初始值,transition的效果是需要用 hover才能实现]"></a>[注意：设置过渡的时候最好设置一个初始值,transition的效果是需要用 hover才能实现]</h6><h2 id="transform2D-变形"><a href="#transform2D-变形" class="headerlink" title="transform2D 变形"></a>transform2D 变形</h2><h4 id="transform-rotate-旋转（deg角度）"><a href="#transform-rotate-旋转（deg角度）" class="headerlink" title="transform: rotate 旋转（deg角度）"></a>transform: rotate 旋转（deg角度）</h4><ul>
+<li><p>通过指定的角度参数对原元素指定一个2D rotation（2D 旋转）</p>
+</li>
+<li><p>deg-可为负数</p>
+</li>
+</ul>
+<ul>
+<li>可以有X\Y\Z轴(默认为Z轴)</li>
+</ul>
+<h4 id="transform-scale-缩放（倍数）"><a href="#transform-scale-缩放（倍数）" class="headerlink" title="transform: scale 缩放（倍数）"></a>transform: scale 缩放（倍数）</h4><ul>
+<li><p>倍数可以为整数 小数（可以为负数，出现的是颠倒过来的效果）,水平方向跟垂直方向都是同时缩放</p>
+<ul>
+<li><p>scale(2,0.5)：元素水平方向放大到原来2倍，垂直方向缩小到原来的0.5倍</p>
+</li>
+<li><p>scale(2)：元素水平方向跟垂直方向同时放大到原来的2倍</p>
+</li>
+<li><p>scaleX(0.3)：元素仅水平方向缩小到原来的0.3倍</p>
+</li>
+<li><p>scaleY(2)：元素仅垂直方向放大到原来的2倍</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="transform-skew-扭曲（deg角度）"><a href="#transform-skew-扭曲（deg角度）" class="headerlink" title="transform: skew 扭曲（deg角度）"></a>transform: skew 扭曲（deg角度）</h4><ul>
+<li><p>角度可以设置为正数，也可以设置为负数,水平方向跟垂直方向都是同时扭曲</p>
+<ul>
+<li><p>skew(30deg,45deg):元素在水平扭曲30deg,垂直方向扭曲45deg</p>
+</li>
+<li><p>skew(30deg):水平垂直方向同时扭曲30deg</p>
+</li>
+<li><p>skewX(30deg):仅使元素在水平方向扭曲30deg</p>
+</li>
+<li><p>skewY(45deg):仅使元素在垂直方向扭曲变形45deg</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="transform-translate-移动（像素或者百分比）"><a href="#transform-translate-移动（像素或者百分比）" class="headerlink" title="transform:translate 移动（像素或者百分比）"></a>transform:translate 移动（像素或者百分比）</h4><ul>
+<li><p>像素可以为负数，百分比是占本身的比例，translate()，必须设置两个值，不能用一个值来简写代表两个，水平方向跟垂直方向都是同时移动</p>
+<ul>
+<li><p>translate(50px,100px):先同时(x轴向右，y轴向下,因为y轴的正方向在下面)向右下角移动50px,然后y轴方向再向下移动50px</p>
+</li>
+<li><p>translate(50%,50%):x轴，y轴同时向右下角移动盒子本身的50%的距离</p>
+</li>
+<li><p>translateX(x)仅水平（x轴）方向移动</p>
+</li>
+<li><p>translateY(Y)仅垂直（y轴）方向移动</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="transform-origin-X-Y"><a href="#transform-origin-X-Y" class="headerlink" title="transform-origin:X Y"></a>transform-origin:X Y</h4><ul>
+<li><p>旋转元素的基点（旋转点），默认的旋转点在元素的中心位置</p>
+<ul>
+<li><p>其中X和Y的值可以是百分比,em,px，方向</p>
+</li>
+<li><p>transform-origin:20px(当设置为一个值的时候，表示的是沿x轴平移20px，y轴默认为中心位置)</p>
+</li>
+<li><p>transform-origin:left(当设置的为方向的时候，表示沿着某一条边旋转)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="transform的3D变形"><a href="#transform的3D变形" class="headerlink" title="transform的3D变形"></a>transform的3D变形</h2><h3 id="三维坐标图"><a href="#三维坐标图" class="headerlink" title="三维坐标图"></a>三维坐标图</h3><p><img src="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/三维坐标图.jpg" alt="三维坐标图"></p>
+<h3 id="3D空间构造代码"><a href="#3D空间构造代码" class="headerlink" title="3D空间构造代码"></a>3D空间构造代码</h3><pre><code>&lt;style&gt;
+.p3d{
+    perspective: 200px;
+    }
+
+.space{
+    transform-style:preserve-3d;
+    width:500px;&lt;!--舞台大小--&gt;
+    height:500px;
+    border:10px blue solid;
+    }
+&lt;/style&gt;
+
+
+
+&lt;!-- 视距 --&gt;
+&lt;div class=&quot;p3d&quot;&gt;
+    &lt;!-- 舞台 --&gt;
+    &lt;div class=&quot;space&quot;&gt;
+        &lt;div class=&quot;div1&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h4 id="transform：rotate（旋转）"><a href="#transform：rotate（旋转）" class="headerlink" title="transform：rotate（旋转）"></a>transform：rotate（旋转）</h4><ul>
+<li><p>rotate(45deg)：在不给确定的方向值时，默认绕z轴旋转</p>
+</li>
+<li><p>rotateX(45deg)：元素围绕其 X 轴旋转45度（从X轴正方向【从右边】看是顺时针旋转）</p>
+</li>
+<li><p>rotateY(30deg)：元素围绕其 Y 轴旋转30度(从y轴正方向【从下往上，因为y轴正方向在下面】看)</p>
+</li>
+<li><p>rotateY(30deg)：元素围绕其 Z 轴旋转30度（顺时针旋转）</p>
+</li>
+</ul>
+<h6 id="【注意：旋转属性只能设置一个方向，否则默认删除多余属性】"><a href="#【注意：旋转属性只能设置一个方向，否则默认删除多余属性】" class="headerlink" title="【注意：旋转属性只能设置一个方向，否则默认删除多余属性】"></a>【注意：旋转属性只能设置一个方向，否则默认删除多余属性】</h6><h4 id="transform-style"><a href="#transform-style" class="headerlink" title="transform-style:"></a>transform-style:</h4><ul>
+<li><p>含义：嵌套元素如何在3D空间中呈现</p>
+<ul>
+<li><p>transform-style: flat | preserve-3d</p>
+</li>
+<li><p>flat默认，所有子元素在2D平面呈现</p>
+</li>
+<li><p>preserve-3d，所有子元素在3D平面呈现，【注意：设置这个属性之后，就不能overflow:hidden】</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="perspective-视距，视角-设置查看者的位置（ps-当做舞台，视距可以设置的大一点）"><a href="#perspective-视距，视角-设置查看者的位置（ps-当做舞台，视距可以设置的大一点）" class="headerlink" title="perspective:视距，视角 设置查看者的位置（ps:当做舞台，视距可以设置的大一点）"></a>perspective:视距，视角 设置查看者的位置（ps:当做舞台，视距可以设置的大一点）</h4><ul>
+<li><p>两种书写方式：</p>
+<ul>
+<li><p>可以单独直接设置：perspective：400px</p>
+</li>
+<li><p>也可以在transform里面设置：transform:perspective|(400px),rotateY(45deg);</p>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="【注意：一旦在z轴设置移动的值超过了视距，就会看不见该元素了】"><a href="#【注意：一旦在z轴设置移动的值超过了视距，就会看不见该元素了】" class="headerlink" title="【注意：一旦在z轴设置移动的值超过了视距，就会看不见该元素了】"></a>【注意：一旦在z轴设置移动的值超过了视距，就会看不见该元素了】</h6><h4 id="perspective-origin-视角中心-观看点"><a href="#perspective-origin-视角中心-观看点" class="headerlink" title="perspective-origin 视角中心(观看点)"></a>perspective-origin 视角中心(观看点)</h4><ul>
+<li>perspective-origin: x y;可以设置为像素跟百分比，只能设置x轴跟y轴的</li>
+</ul>
+<h4 id="transform-origin"><a href="#transform-origin" class="headerlink" title="transform-origin:"></a>transform-origin:</h4><ul>
+<li><p>含义：旋转元素的基点（也就是该元素是围绕该点旋转的）</p>
+</li>
+<li><p>3D可以设置三个属性值，分别是x轴，y轴，z轴</p>
+</li>
+</ul>
+<h6 id="【注意-x轴y轴都可以设置为像素，百分比和em，但是z轴不能设置为百分比，只能设置像素跟em】"><a href="#【注意-x轴y轴都可以设置为像素，百分比和em，但是z轴不能设置为百分比，只能设置像素跟em】" class="headerlink" title="【注意;x轴y轴都可以设置为像素，百分比和em，但是z轴不能设置为百分比，只能设置像素跟em】"></a>【注意;x轴y轴都可以设置为像素，百分比和em，但是z轴不能设置为百分比，只能设置像素跟em】</h6><h4 id="transform-translateZ-100px"><a href="#transform-translateZ-100px" class="headerlink" title="transform:translateZ(100px);"></a>transform:translateZ(100px);</h4><ul>
+<li>沿z轴移动，只能设置像素值，可正可负，（由于z轴正方向是正对着我们，设置正数移动的时候有放大的效果，设置负数移动有缩小的效果）</li>
+</ul>
+<h4 id="backface-visibility-元素旋转到背面是否可见"><a href="#backface-visibility-元素旋转到背面是否可见" class="headerlink" title="backface-visibility(元素旋转到背面是否可见)"></a>backface-visibility(元素旋转到背面是否可见)</h4><ul>
+<li>backface-visibility: visible（可见） | hidden（隐藏）</li>
+</ul>
+<h3 id="animation-动画效果"><a href="#animation-动画效果" class="headerlink" title="animation 动画效果"></a>animation 动画效果</h3><h4 id="1-animation-name-动画属性名"><a href="#1-animation-name-动画属性名" class="headerlink" title="1.animation-name /动画属性名/"></a>1.animation-name /<em>动画属性名</em>/</h4><h4 id="2-keyframes-动画关键帧"><a href="#2-keyframes-动画关键帧" class="headerlink" title="2.@keyframes 动画关键帧"></a>2.@keyframes 动画关键帧</h4><ul>
+<li><p>用from和to来写；例：</p>
+<pre><code>@keyframes name{
+    from{
+        width: 200px;
+        }
+    to{
+        width: 100px;
+        }
+    }
+</code></pre></li>
+<li>用(百分比)10%，20%，30%。。。100%，来写，例：</li>
+</ul>
+<pre><code>@keyframes name{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform:scale(1.5,1.5);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+</code></pre><h4 id="3-animation-duration-动画持续时间-，单位：s"><a href="#3-animation-duration-动画持续时间-，单位：s" class="headerlink" title="3.animation-duration /动画持续时间/，单位：s"></a>3.animation-duration /<em>动画持续时间</em>/，单位：s</h4><h4 id="4-animation-timing-function-动画效果"><a href="#4-animation-timing-function-动画效果" class="headerlink" title="4.animation-timing-function /动画效果/"></a>4.animation-timing-function /<em>动画效果</em>/</h4><ul>
+<li>动画类型：ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier</li>
+</ul>
+<h4 id="5-animation-iteration-count-指定元素播放动画的循环次数"><a href="#5-animation-iteration-count-指定元素播放动画的循环次数" class="headerlink" title="5.animation-iteration-count /指定元素播放动画的循环次数/"></a>5.animation-iteration-count /<em>指定元素播放动画的循环次数</em>/</h4><ul>
+<li>infinite 无限；数字代表几次</li>
+</ul>
+<h4 id="6-animation-delay-指定元素动画开始时间，单位：-s秒"><a href="#6-animation-delay-指定元素动画开始时间，单位：-s秒" class="headerlink" title="6.animation-delay 指定元素动画开始时间，单位： s秒"></a>6.animation-delay 指定元素动画开始时间，单位： s秒</h4><h4 id="7-animation-direction-指定元素动画播放的方向"><a href="#7-animation-direction-指定元素动画播放的方向" class="headerlink" title="7.animation-direction  /指定元素动画播放的方向/"></a>7.animation-direction  /<em>指定元素动画播放的方向</em>/</h4><ul>
+<li><p>默认值为normal，动画的每次循环都是向前播放</p>
+</li>
+<li><p>alternate，动画播放在第偶数次向前播放，第奇数次向反方向播放</p>
+</li>
+</ul>
+<h4 id="8-animation-fill-mode：forwrds"><a href="#8-animation-fill-mode：forwrds" class="headerlink" title="8.animation-fill-mode：forwrds"></a>8.animation-fill-mode：forwrds</h4><ul>
+<li>含义：保留动画的最后一个属性值， 会在最后一个属性值停住</li>
+</ul>
+<h5 id="动画效果简写方式"><a href="#动画效果简写方式" class="headerlink" title="动画效果简写方式"></a>动画效果简写方式</h5><h6 id="animation-haha-5s-infinite-linear-1s"><a href="#animation-haha-5s-infinite-linear-1s" class="headerlink" title="animation: haha 5s infinite linear 1s;"></a>animation: haha 5s infinite linear 1s;</h6><h6 id="（动画名称，持续时间，播放次数，动画速度变化方式，动画开始的延迟时间）"><a href="#（动画名称，持续时间，播放次数，动画速度变化方式，动画开始的延迟时间）" class="headerlink" title="（动画名称，持续时间，播放次数，动画速度变化方式，动画开始的延迟时间）"></a>（动画名称，持续时间，播放次数，动画速度变化方式，动画开始的延迟时间）</h6><h6 id="含义：动画名为haha在1秒之后无限循环的播放，播放持续时间为5s"><a href="#含义：动画名为haha在1秒之后无限循环的播放，播放持续时间为5s" class="headerlink" title="含义：动画名为haha在1秒之后无限循环的播放，播放持续时间为5s"></a>含义：动画名为haha在1秒之后无限循环的播放，播放持续时间为5s</h6><h5 id="【注意：transition与animation不同的是，transition是需要hover实现，而animation是自动效果】"><a href="#【注意：transition与animation不同的是，transition是需要hover实现，而animation是自动效果】" class="headerlink" title="【注意：transition与animation不同的是，transition是需要hover实现，而animation是自动效果】"></a>【注意：transition与animation不同的是，transition是需要hover实现，而animation是自动效果】</h5>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/01/第七篇/" data-id="ciq3fetg0000709slwnicqdh9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-第六篇" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/06/30/第六篇/" class="article-date">
@@ -194,7 +432,7 @@ background-repeat:repeat-x;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/30/第六篇/" data-id="ciq2gp7r1000540slndm5m1s7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/30/第六篇/" data-id="ciq3fdtp6000309sl7w619txb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -345,7 +583,7 @@ input:enabled{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/28/第五篇/" data-id="ciq2gp7qy000340sld58looqi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/28/第五篇/" data-id="ciq3fdtpd000509slcks75kl2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -453,7 +691,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/27/第四篇/" data-id="ciq2gp7r2000640sl23qxv209" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/27/第四篇/" data-id="ciq3fdtp9000409slt6s8d16c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -536,7 +774,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/27/第三篇/" data-id="ciq2gp7qv000240slglnll0uv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/27/第三篇/" data-id="ciq3fdtp3000209slk7dph8oy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -663,7 +901,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/23/第二篇/" data-id="ciq2gp7r0000440sl34wjtq52" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/23/第二篇/" data-id="ciq3fdtph000609slli70k2ly" class="article-share-link">Share</a>
       
       
     </footer>
@@ -730,7 +968,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/22/第一篇/" data-id="ciq2gp7qr000140sl0foa3tra" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/22/第一篇/" data-id="ciq3fdtoy000109slpo9jldyb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -775,7 +1013,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/22/hello-world/" data-id="ciq2gp7qm000040slyfpds27c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/22/hello-world/" data-id="ciq3fdtos000009sl6fiztbej" class="article-share-link">Share</a>
       
       
     </footer>
@@ -802,7 +1040,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li></ul>
     </div>
   </div>
 
@@ -813,6 +1051,10 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/07/01/第七篇/">第七篇</a>
+          </li>
         
           <li>
             <a href="/2016/06/30/第六篇/">第六篇</a>
@@ -828,10 +1070,6 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
         
           <li>
             <a href="/2016/06/27/第三篇/">第三篇</a>
-          </li>
-        
-          <li>
-            <a href="/2016/06/23/第二篇/">第二篇</a>
           </li>
         
       </ul>
