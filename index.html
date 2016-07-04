@@ -64,6 +64,195 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-第八篇" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/04/第八篇/" class="article-date">
+  <time datetime="2016-07-04T13:23:32.000Z" itemprop="datePublished">2016-07-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/04/第八篇/">第八篇</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="怪异模式盒模型（quirks-模式）"><a href="#怪异模式盒模型（quirks-模式）" class="headerlink" title="怪异模式盒模型（quirks 模式）"></a>怪异模式盒模型（quirks 模式）</h3><ul>
+<li>含义：在怪异模式下的盒模型，盒子的总宽度和高度是包含内边距padding和边框border宽度在内的，</li>
+</ul>
+<ul>
+<li>一个块的总宽度= width + margin(左右)（即width已经包含了padding和border值）</li>
+</ul>
+<h3 id="在标准模式下的盒模型"><a href="#在标准模式下的盒模型" class="headerlink" title="在标准模式下的盒模型:"></a>在标准模式下的盒模型:</h3><ul>
+<li><p>一个块的总宽度= width + margin(左右) + padding(左右) + border(左右)</p>
+</li>
+<li><p>也就是设置padding的时候就增加盒子的宽高大小</p>
+</li>
+</ul>
+<h3 id="box-sizing"><a href="#box-sizing" class="headerlink" title="box-sizing"></a>box-sizing</h3><ul>
+<li><p>-webkit-box-sizing有两个值一个是content-box，另一个是border-box</p>
+<ul>
+<li>当设置为box-sizing:content-box时，将采用标准模式解析计算，  也是默认模式；</li>
+<li>当设置为box-sizing:border-box时，将采用怪异模式解析计算；</li>
+</ul>
+</li>
+</ul>
+<h3 id="css3-font-face-规则"><a href="#css3-font-face-规则" class="headerlink" title="css3 @font-face 规则"></a>css3 @font-face 规则</h3><h4 id="引入字体"><a href="#引入字体" class="headerlink" title="引入字体"></a>引入字体</h4><pre><code>语法：
+    @font-face ：{
+    font-family:&lt;你的web字体名称&gt;;
+    src:url(“字体路径”);
+    font-weight:bold;
+}
+引用：
+div{
+    font-family:你的web字体名称;
+    }
+</code></pre><h4 id="resize-改变元素尺寸大小（ps-IE-欧朋不支持）"><a href="#resize-改变元素尺寸大小（ps-IE-欧朋不支持）" class="headerlink" title="resize:改变元素尺寸大小（ps:IE/欧朋不支持）"></a>resize:改变元素尺寸大小（ps:IE/欧朋不支持）</h4><ul>
+<li><p>resize:none | both | horizontal | vertical | inherit</p>
+<ul>
+<li><p>none:不能修改</p>
+</li>
+<li><p>both:可以同时修改宽高</p>
+</li>
+<li><p>horizontal:只能修改宽度</p>
+</li>
+<li><p>vertical:只能更改高度</p>
+</li>
+</ul>
+</li>
+<li><p>语法：</p>
+</li>
+</ul>
+<pre><code>&lt;style&gt;
+    textarea{
+        resize:none;
+        }
+    div{
+        width: 200px;
+        height: 200px;
+        background: #ccc;
+        resize: both;
+        overflow: auto;/*自动有滚动条*/
+        }
+&lt;/style&gt;
+
+&lt;body&gt;
+    &lt;textarea&gt;&lt;/textarea&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/body&gt;
+</code></pre><h6 id="注意：如果给div一个元素一开始设置了宽高，想改变它的宽高就必须加overflow：hidden，就想上面的div一样。"><a href="#注意：如果给div一个元素一开始设置了宽高，想改变它的宽高就必须加overflow：hidden，就想上面的div一样。" class="headerlink" title="注意：如果给div一个元素一开始设置了宽高，想改变它的宽高就必须加overflow：hidden，就想上面的div一样。"></a>注意：如果给div一个元素一开始设置了宽高，想改变它的宽高就必须加overflow：hidden，就想上面的div一样。</h6><h4 id="column-多列（ps-只能用于文字，不能用于英文，中文加英文都不行）"><a href="#column-多列（ps-只能用于文字，不能用于英文，中文加英文都不行）" class="headerlink" title="column 多列（ps:只能用于文字，不能用于英文，中文加英文都不行）"></a>column 多列（ps:只能用于文字，不能用于英文，中文加英文都不行）</h4><ul>
+<li>column-count：定义分栏的数目。</li>
+<li>column-gap：定义列之间的间隔。</li>
+<li><p>column-rule：定义列与列之间间隔线的宽度，样式和颜色。</p>
+<pre><code>div{
+-webkit-column-count:3; 
+-webkit-column-gap:40px; 
+-webkit-column-rule:3px red solid; 
+}
+</code></pre></li>
+</ul>
+<h2 id="css3-弹性布局"><a href="#css3-弹性布局" class="headerlink" title="css3 弹性布局"></a>css3 弹性布局</h2><h4 id="box-flex-让子容器针对父容器的宽度按一定规则进行划分（注意：使用时父级必须设置display-box；）"><a href="#box-flex-让子容器针对父容器的宽度按一定规则进行划分（注意：使用时父级必须设置display-box；）" class="headerlink" title="box-flex :让子容器针对父容器的宽度按一定规则进行划分（注意：使用时父级必须设置display:box；）"></a>box-flex :让子容器针对父容器的宽度按一定规则进行划分（注意：使用时父级必须设置display:box；）</h4><h6 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h6><pre><code>    &lt;style&gt;
+        .wrap{
+        display:-webkit-box;
+            }
+        .wrap div:nth-child(1){
+            background: #ccc;
+            -webkit-box-flex:3;
+            }
+        .wrap div:nth-child(2){
+            background: green;
+            -webkit-box-flex:2;
+            }
+        .wrap div:nth-child(3){
+            background: blue;
+            -webkit-box-flex:1;
+            }
+    &lt;/style&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;wrap&quot;&gt;
+            &lt;div&gt;第一&lt;/div&gt;
+            &lt;div&gt;第二&lt;/div&gt;
+            &lt;div&gt;第三&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+
+box-flex：3,2,1 表示的占父级的几份，把父级分成几份，第一个占3份，以此类推
+
+当设置了固定宽度的时候，后面的使用弹性布局，就会按照设置的比例分配
+
+设置了margin之后，margin也是算在里面的
+</code></pre><h5 id="box-orient"><a href="#box-orient" class="headerlink" title="box-orient"></a>box-orient</h5><ul>
+<li><p>含义：定义子容器的排列方式</p>
+<ul>
+<li><p>box-orient ：horizontal（子容器水平排列）</p>
+</li>
+<li><p>box-orient ：vertical（子容器垂直排列）</p>
+<ul>
+<li>不设置的时候默认为水平排列</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="box-direction"><a href="#box-direction" class="headerlink" title="box-direction"></a>box-direction</h5><ul>
+<li><p>含义：定义子容器的排列方式</p>
+<ul>
+<li><p>box-direction：normal（正常的，按照从左到右或从上到下<br>）</p>
+</li>
+<li><p>box-direction：reverse（反转，同上相反）</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="box-align"><a href="#box-align" class="headerlink" title="box-align"></a>box-align</h5><ul>
+<li><p>含义：子容器的垂直对齐方式</p>
+<ul>
+<li><p>box-align：start(默认，居顶对齐)</p>
+</li>
+<li><p>box-align：center(居中对齐)</p>
+</li>
+<li><p>box-align：end(居底对齐)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="box-pack"><a href="#box-pack" class="headerlink" title="box-pack"></a>box-pack</h5><ul>
+<li><p>含义：子容器的水平对齐方式</p>
+<ul>
+<li><p>box-pack：start(默认，居左对齐)</p>
+</li>
+<li><p>box-pack：center(居中对齐)</p>
+</li>
+<li><p>box-pack：end(居右对齐)</p>
+</li>
+<li><p>box-pack：justify(水平等分父容器的宽度)</p>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/04/第八篇/" data-id="ciq827cl0000445sldxa6wghg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-第七篇" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/07/01/第七篇/" class="article-date">
@@ -292,7 +481,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/01/第七篇/" data-id="ciq3givjj00022hsl5fl364sy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/01/第七篇/" data-id="ciq827cko000045slnpdd3xet" class="article-share-link">Share</a>
       
       
     </footer>
@@ -432,7 +621,7 @@ background-repeat:repeat-x;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/30/第六篇/" data-id="ciq3givjp00062hsluf1rf5i9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/30/第六篇/" data-id="ciq827cld000845slkw3e3jco" class="article-share-link">Share</a>
       
       
     </footer>
@@ -583,7 +772,7 @@ input:enabled{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/28/第五篇/" data-id="ciq3givjo00052hslfhohjjou" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/28/第五篇/" data-id="ciq827ckw000245slns1931t2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -691,7 +880,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/27/第四篇/" data-id="ciq3givjt00072hslb13pfzyo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/27/第四篇/" data-id="ciq827clc000745sl74vhlbie" class="article-share-link">Share</a>
       
       
     </footer>
@@ -774,7 +963,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/27/第三篇/" data-id="ciq3givjl00032hslplu7ksn5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/27/第三篇/" data-id="ciq827clb000645slb0aveiie" class="article-share-link">Share</a>
       
       
     </footer>
@@ -901,7 +1090,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/23/第二篇/" data-id="ciq3givjm00042hsl9e21zoo4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/23/第二篇/" data-id="ciq827ckz000345slmiqcyakm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -968,7 +1157,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/22/第一篇/" data-id="ciq3givjf00012hslco7wzs6l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/22/第一篇/" data-id="ciq827cl3000545slvt28ad2w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1013,7 +1202,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/22/hello-world/" data-id="ciq3givja00002hslh8sa8z7h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/22/hello-world/" data-id="ciq827ckt000145sl9ddgiaww" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1053,6 +1242,10 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       <ul>
         
           <li>
+            <a href="/2016/07/04/第八篇/">第八篇</a>
+          </li>
+        
+          <li>
             <a href="/2016/07/01/第七篇/">第七篇</a>
           </li>
         
@@ -1066,10 +1259,6 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
         
           <li>
             <a href="/2016/06/27/第四篇/">第四篇</a>
-          </li>
-        
-          <li>
-            <a href="/2016/06/27/第三篇/">第三篇</a>
           </li>
         
       </ul>
