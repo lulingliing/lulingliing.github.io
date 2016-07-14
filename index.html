@@ -64,6 +64,137 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-js阶段第1篇" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/14/js阶段第1篇/" class="article-date">
+  <time datetime="2016-07-14T05:24:02.000Z" itemprop="datePublished">2016-07-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/14/js阶段第1篇/">第九篇</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>1.typeof获取数据类型</p>
+<pre><code>//获取类型
+console.log(typeof 123)
+</code></pre><p>2.number数字类型;</p>
+<p>3.string字符串类型;</p>
+<p>4.boolean布尔类型</p>
+<p>5.array数组类型</p>
+<p>6.object对象类型</p>
+<p>7.undefined未定义类型</p>
+<p>8.null空类型</p>
+<pre><code>var a=100;//number类型
+var b=&apos;200&apos;;//单引号string类型
+var c=&quot;300&quot;;//双引号string类型
+var d;      //无初值为underfined未定义类型
+var e=null; //空对象类型
+</code></pre><h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><h6 id="1-显式类型转换"><a href="#1-显式类型转换" class="headerlink" title="1.显式类型转换"></a>1.显式类型转换</h6><pre><code>String(123);//结果为:123 number-&gt;string
+
+Number(&apos;123&apos;);//结果为:123 string-&gt; number
+
+parseInt(&apos;123&apos;);//结果为:123 string-&gt;number
+
+parseInt(3.14);结果为:3 保留整数，也就是取整
+</code></pre><ul>
+<li><p>parseInt() :从左到右提取字符串中的整数，遇到非数字，结束。</p>
+<ul>
+<li><p>能够把字符串转换为数值类型</p>
+</li>
+<li><p>能够把小数转换为整数类型</p>
+</li>
+<li><p>alert(parseInt(‘Lee456Lee’)); //结果为:NaN，如果第一个不是数值，就返回NaN</p>
+</li>
+<li><p>alert(parseInt(‘12Lee56Lee’)); //结果为:12，从第一数值开始取，到最后一个连续数值结束</p>
+</li>
+<li><p>alert(parseInt(‘56.12’)); //结果为:56，小数点不是数值，会被去掉</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>parseFloat() :提取字符串中的小数</p>
+<ul>
+<li>console.log(parseFloat(121.12.12.0));//结果为:121.12    </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Number() :将字符串转换为数字</p>
+</li>
+<li><p>Boolean（）除了空字符串、-0、0和NaN、null和undefined为false，其他为true；</p>
+</li>
+<li><p>String() 将数字转换为字符串</p>
+</li>
+</ul>
+<h6 id="2-隐藏类型转换"><a href="#2-隐藏类型转换" class="headerlink" title="2.隐藏类型转换"></a>2.隐藏类型转换</h6><ul>
+<li><p>alert(12+”12”);//结果为:1212,数字和字符串用+号连接时结果为字符串</p>
+</li>
+<li><p>alert(“13”+12);//结果为:1312</p>
+</li>
+<li><p>alert(“13”-12);//结果为:1，减号将字符串转换为数值</p>
+</li>
+</ul>
+<ul>
+<li><p>alert(true+1);//结果为:2,布尔类型转换为数值类型</p>
+</li>
+<li><p>alert(false-“1”);//结果为:-1,减号前后都转换为数值，*，/也是一样</p>
+</li>
+<li><p>alert(false*“2”);//结果为:0</p>
+</li>
+<li><p>alert(12&gt;”23”);//结果为:false,字符串和数字比较的时候，字符串转换为数值</p>
+</li>
+<li><p>alert(“12”&gt;23);//结果为:false</p>
+</li>
+</ul>
+<h6 id="this变量：永远指向其所在函数的所有者，如果没有所有者时指向window。"><a href="#this变量：永远指向其所在函数的所有者，如果没有所有者时指向window。" class="headerlink" title="this变量：永远指向其所在函数的所有者，如果没有所有者时指向window。"></a>this变量：永远指向其所在函数的所有者，如果没有所有者时指向window。</h6><p>######三元运算符 表达式1？表达式2：表达式3,意思是表达式1为真，执行表达式2，否则表达式1为假的话，执行表达式3.例如：</p>
+<pre><code>(a&gt;b)?(c=4):(c=3)
+假设a=5,b=3
+5&gt;3为真，则执行c=4
+</code></pre><h3 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h3><h6 id="IE浏览器不支持querySelector-querySelectorAll"><a href="#IE浏览器不支持querySelector-querySelectorAll" class="headerlink" title="IE浏览器不支持querySelector() querySelectorAll()"></a>IE浏览器不支持querySelector() querySelectorAll()</h6><h4 id="querySelector-方法"><a href="#querySelector-方法" class="headerlink" title="querySelector()方法"></a>querySelector()方法</h4><ul>
+<li>接受一个参数：通过元素的css选择器查找元素。如果找到相应的元素则返回该元素的HTMLDivElement 对象，如果不存在，则返回null<ul>
+<li>document.querySelector(‘#div1’);    //获取id 为div1 的元素</li>
+<li>document.querySelector(‘.div1’);     //获取class 为div1 的第一个元素</li>
+</ul>
+</li>
+</ul>
+<h4 id="querySelectorAll-方法"><a href="#querySelectorAll-方法" class="headerlink" title="querySelectorAll()方法"></a>querySelectorAll()方法</h4><ul>
+<li><p>将返回一个对象数组这个数组保存着所有符合选择器的节点列表。</p>
+<ul>
+<li>document.querySelectorAll(‘li’);      //获取所有li元素，返回数组</li>
+<li><p>document.querySelectorAll(‘.list’);  //获取所有class为list的元素，返回数组</p>
+</li>
+<li><p>document.querySelectorAll(‘.list’)[0];表示的是在所有的.list的类下面的第一个.list的类</p>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/14/js阶段第1篇/" data-id="ciqlvglxp0000uxslcd43kszr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-第八篇" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/07/04/第八篇/" class="article-date">
@@ -243,7 +374,7 @@ box-flex：3,2,1 表示的占父级的几份，把父级分成几份，第一个
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/04/第八篇/" data-id="ciqacq8jw0007oksl8732999b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/04/第八篇/" data-id="ciqlvgly30005uxsli558odsi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -481,7 +612,7 @@ box-flex：3,2,1 表示的占父级的几份，把父级分成几份，第一个
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/01/第七篇/" data-id="ciqacq8j40000okslk1vhpdo2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/01/第七篇/" data-id="ciqlvglxz0003uxslbd8lc3gz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -621,7 +752,7 @@ background-repeat:repeat-x;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/30/第六篇/" data-id="ciqacq8jz0008okslbeqfycpu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/30/第六篇/" data-id="ciqlvglyk0007uxslvgjz5bba" class="article-share-link">Share</a>
       
       
     </footer>
@@ -772,7 +903,7 @@ input:enabled{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/28/第五篇/" data-id="ciqacq8jl0004okslx4wu2oga" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/28/第五篇/" data-id="ciqlvglyr0009uxslmcmh1k62" class="article-share-link">Share</a>
       
       
     </footer>
@@ -880,7 +1011,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/27/第四篇/" data-id="ciqacq8jp0006okslt0plwy6a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/27/第四篇/" data-id="ciqlvglym0008uxslpn4kgcb9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -963,7 +1094,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/27/第三篇/" data-id="ciqacq8jd0002oksll469jj96" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/27/第三篇/" data-id="ciqlvgly00004uxsl521lj998" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1090,7 +1221,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/23/第二篇/" data-id="ciqacq8jh0003okslu2nkx8da" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/23/第二篇/" data-id="ciqlvgly60006uxslzi3kxix2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1157,7 +1288,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/22/第一篇/" data-id="ciqacq8jn0005okslzrzhbn49" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/22/第一篇/" data-id="ciqlvglxw0002uxslo7czb9zn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1202,7 +1333,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/22/hello-world/" data-id="ciqacq8ja0001oksl2788b3uc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/22/hello-world/" data-id="ciqlvglxu0001uxsl40tbk3bb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1242,6 +1373,10 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       <ul>
         
           <li>
+            <a href="/2016/07/14/js阶段第1篇/">第九篇</a>
+          </li>
+        
+          <li>
             <a href="/2016/07/04/第八篇/">第八篇</a>
           </li>
         
@@ -1255,10 +1390,6 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
         
           <li>
             <a href="/2016/06/28/第五篇/">第五篇</a>
-          </li>
-        
-          <li>
-            <a href="/2016/06/27/第四篇/">第四篇</a>
           </li>
         
       </ul>
