@@ -64,6 +64,85 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-js阶段第二篇" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/14/js阶段第二篇/" class="article-date">
+  <time datetime="2016-07-14T06:11:10.000Z" itemprop="datePublished">2016-07-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/14/js阶段第二篇/">js阶段第二篇</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="tab选项卡切换代码"><a href="#tab选项卡切换代码" class="headerlink" title="tab选项卡切换代码"></a>tab选项卡切换代码</h3><h6 id="style样式"><a href="#style样式" class="headerlink" title="style样式"></a>style样式</h6><pre><code>&lt;style type=&quot;text/css&quot;&gt;
+     div{
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        /*left: 0;
+        top:0;*/
+        background: #ccc;
+        display: none;
+        font-size: 100px;
+    }
+    .active{
+        background-color: yellowgreen;
+    }
+    .show{
+        display: block;
+    }
+&lt;/style&gt;
+</code></pre><h6 id="body里面的样式"><a href="#body里面的样式" class="headerlink" title="body里面的样式"></a>body里面的样式</h6><pre><code>&lt;body&gt;
+    &lt;input  class=&quot;active&quot; type=&quot;button&quot; name=&quot;&quot; id=&quot;&quot; value=&quot;按钮1&quot;/&gt;
+    &lt;input type=&quot;button&quot; name=&quot;&quot; id=&quot;&quot; value=&quot;按钮2&quot; /&gt;
+    &lt;input  type=&quot;button&quot; name=&quot;&quot; id=&quot;&quot; value=&quot;按钮3&quot; /&gt;
+    &lt;div class=&quot;show&quot;&gt;1&lt;/div&gt;
+    &lt;div&gt;2&lt;/div&gt;
+    &lt;div&gt;3&lt;/div&gt;
+&lt;/body&gt;
+</code></pre><h6 id="script样式"><a href="#script样式" class="headerlink" title="script样式"></a>script样式</h6><pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var inputs=document.getElementsByTagName(&quot;input&quot;);
+    var divs=document.getElementsByTagName(&quot;div&quot;);
+       for(var i=0;i&lt;inputs.length;i++){
+            inputs[i].index=i;
+            inputs[i].onclick=function(){
+                //下面的for循环是清除前面的样式
+                for(var j=0;j&lt;inputs.length;j++){
+                 inputs[j].style.backgroundColor=&quot;&quot;;
+                 divs[j].style.display=&quot;none&quot;;
+
+                }
+                this.style.backgroundColor=&quot;red&quot;;
+                console.log(this.index);//检测下标是否赋值
+                divs[this.index].style.display=&quot;block&quot;;
+            }
+        }
+</code></pre><h3 id="复选框代码"><a href="#复选框代码" class="headerlink" title="复选框代码"></a>复选框代码</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/14/js阶段第二篇/" data-id="ciqm8s5yi0009lqsll6v02dxn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-js阶段第1篇" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/07/14/js阶段第1篇/" class="article-date">
@@ -185,7 +264,7 @@ parseInt(3.14);结果为:3 保留整数，也就是取整
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/14/js阶段第1篇/" data-id="ciqlvjm300000vpslkgrt13jx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/14/js阶段第1篇/" data-id="ciqm8s5xq0000lqslagt76obc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -374,7 +453,7 @@ box-flex：3,2,1 表示的占父级的几份，把父级分成几份，第一个
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/04/第八篇/" data-id="ciqlvjm3m0008vpslgxycxc50" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/04/第八篇/" data-id="ciqm8s5y90007lqsl7hfe9ldv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -612,7 +691,7 @@ box-flex：3,2,1 表示的占父级的几份，把父级分成几份，第一个
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/01/第七篇/" data-id="ciqlvjm3a0003vpslv6tcjls0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/01/第七篇/" data-id="ciqm8s5yd0008lqslygzmp83p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -752,7 +831,7 @@ background-repeat:repeat-x;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/30/第六篇/" data-id="ciqlvjm3j0007vpsl88dewlpb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/30/第六篇/" data-id="ciqm8s5y60006lqsl5foubbsk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -903,7 +982,7 @@ input:enabled{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/28/第五篇/" data-id="ciqlvjm3g0006vpsl50pl2bm0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/28/第五篇/" data-id="ciqm8s5y40005lqsll3zk5imb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1011,7 +1090,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/27/第四篇/" data-id="ciqlvjm3r0009vpsld7zg0r6p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/27/第四篇/" data-id="ciqm8s5yj000alqsljgwiybom" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1094,7 +1173,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/27/第三篇/" data-id="ciqlvjm3c0004vpsluob16bmj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/27/第三篇/" data-id="ciqm8s5xz0002lqsluv2ua38v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1221,7 +1300,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/23/第二篇/" data-id="ciqlvjm3e0005vpslthol766z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/23/第二篇/" data-id="ciqm8s5y20003lqslkdgrupr8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1288,52 +1367,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/22/第一篇/" data-id="ciqlvjm380002vpslumsi1c5d" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/22/hello-world/" class="article-date">
-  <time datetime="2016-06-22T02:59:01.000Z" itemprop="datePublished">2016-06-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/22/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/22/hello-world/" data-id="ciqlvjm350001vpsldzavpjun" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/22/第一篇/" data-id="ciqm8s5y30004lqsl9jetmg1w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1344,6 +1378,10 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
 
   
 
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
 </section>
         
           <aside id="sidebar">
@@ -1373,6 +1411,10 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       <ul>
         
           <li>
+            <a href="/2016/07/14/js阶段第二篇/">js阶段第二篇</a>
+          </li>
+        
+          <li>
             <a href="/2016/07/14/js阶段第1篇/">js阶段第一篇</a>
           </li>
         
@@ -1386,10 +1428,6 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
         
           <li>
             <a href="/2016/06/30/第六篇/">第六篇</a>
-          </li>
-        
-          <li>
-            <a href="/2016/06/28/第五篇/">第五篇</a>
           </li>
         
       </ul>
