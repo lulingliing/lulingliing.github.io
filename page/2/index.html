@@ -64,6 +64,73 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-第一篇" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/22/第一篇/" class="article-date">
+  <time datetime="2016-06-22T03:22:41.000Z" itemprop="datePublished">2016-06-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/22/第一篇/">第一篇</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="搭建hexo博客"><a href="#搭建hexo博客" class="headerlink" title="搭建hexo博客"></a>搭建hexo博客</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="nodeJS"><a href="#nodeJS" class="headerlink" title="nodeJS"></a>nodeJS</h3><p>首先下载安装一个nodeJS，也可以通过<a href="https://nodejs.org/en/" target="_blank" rel="external">nodeJS下载地址</a>，测试nodeJS是否安装成功，在终端命令行输入node -v，出现v+数字，例：v4.4.5就表示安装成功啦！</p>
+<h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><p>下载安装一个git,在终端输入git –version,出现git version+数字，例：git version 2.7.4，就表示已经安装好了，接下来就是搭建hexo了。</p>
+<h2 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h2><h3 id="安装本地hexo"><a href="#安装本地hexo" class="headerlink" title="安装本地hexo"></a>安装本地hexo</h3><p>1.在终端输入npm install hexo -g 回车，如果报错出现root/Administrator,则输入node npm install hexo -g 回车，则出现如下图，输入管理员密码，回车</p>
+<p><img src="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/图1.jpg" alt="图1"></p>
+<p>2.测试hexo是否安装成功，在终端输入hexo回车,如若出现如下图所示的代码，则安装成功。</p>
+<p><img src="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/图2.png" alt="图2">  </p>
+<h3 id="新建一个文件夹（ps-以桌面创建为例）"><a href="#新建一个文件夹（ps-以桌面创建为例）" class="headerlink" title="新建一个文件夹（ps:以桌面创建为例）"></a>新建一个文件夹（ps:以桌面创建为例）</h3><p>1.在终端输入cd Desktop回车，进入电脑桌面</p>
+<p>2.在终端输入mkdir blog回车，创建了一个名为blog的文件夹</p>
+<p>3.在终端输入cd blog回车，进入该文件夹</p>
+<p>4.当前的blog是空的，在终端输入hexo init,回车，就会出现很多文件夹，初始化blog文件夹，陈成功之后就会是如下图：</p>
+<p><img src="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/图3.png" alt="图3">  </p>
+<p>5.在终端输入hexo server回车，在本地运行，成功之后在终端会出现一个本地博客地址<a href="http://localhost:4000/，点击进入。按住Ctrl+c退出hexo运行" target="_blank" rel="external">http://localhost:4000/，点击进入。按住Ctrl+c退出hexo运行</a></p>
+<p>6.在终端输入hexo g回车，生成HTML文件</p>
+<p>7.在终端输入hexo d回车，发布到线上</p>
+<h3 id="注册一个账号"><a href="#注册一个账号" class="headerlink" title="注册一个账号"></a>注册一个账号</h3><p>1.在注册界面注册一个用户名，填写一个邮箱与密码，然后直接进入里面</p>
+<p>2.注册一个github账号，在终端输入ssh-keygen,连续回车三次，如下图：</p>
+<p><img src="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/图4.png" alt="图4"> </p>
+<p>3.在终端输入vim ~/.ssh/id_rsa.pub命令，复制ssh-key的值（ps:一个波浪线都不要多复制），在终端输入：q回车，打开本地博客，点击settings,进入里面的SSH and GPG keys，在key的框里将ssh-key的值粘贴进去。</p>
+<h3 id="验证本机机器与github"><a href="#验证本机机器与github" class="headerlink" title="验证本机机器与github"></a>验证本机机器与github</h3><p>1.在终端输入“git config –global user.name”用户名”（例：git config –global user.name”lulingliing”）</p>
+<p>2.在终端输入“git config –global user.email”邮箱地址”（例：git config –global user.email”1552442072@qq.com”）</p>
+<p>3.在本地博客搭建域名仓库，repository必须与注册的用户名一致。</p>
+<h3 id="配置config-yml"><a href="#配置config-yml" class="headerlink" title="配置config.yml"></a>配置config.yml</h3><p>1.在blog文件夹中的config.yml文件下的deploy下写空格+git</p>
+<p>2.在本地博客中将域名仓库HTTPS的地址写在repo下（ps:在config.yml中写代码都需要在冒号后面加空格）如下图：</p>
+<p><img src="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/图5.png" alt="图5"> </p>
+<p>这样一个博客就创建成功啦！</p>
+<h3 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h3><ul>
+<li><p>先在终端输入hexo new回车，然后按照下面方法进入这些文件夹，blog——source——_posts,该文件夹下就会有一个自己命名的文件。</p>
+</li>
+<li><p>接下来就可以在该文件中写自己的博客了，在终端输入hexo server回车，在本地运行；在终端输入hexo g回车，生成HTML文件；在终端输入hexo d回车，发布到线上，这样就能在线看到你的博客内容啦！</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/22/第一篇/" data-id="ciqm8xtvj0004moslasm0bppa" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/06/22/hello-world/" class="article-date">
@@ -99,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/22/hello-world/" data-id="ciqm8s5xw0001lqslaeu8lkd6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/22/hello-world/" data-id="ciqm8xtvc0001mosl5m0ofr7n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -143,6 +210,10 @@
       <ul>
         
           <li>
+            <a href="/2016/07/14/js阶段第三篇/">js阶段第三篇</a>
+          </li>
+        
+          <li>
             <a href="/2016/07/14/js阶段第二篇/">js阶段第二篇</a>
           </li>
         
@@ -156,10 +227,6 @@
         
           <li>
             <a href="/2016/07/01/第七篇/">第七篇</a>
-          </li>
-        
-          <li>
-            <a href="/2016/06/30/第六篇/">第六篇</a>
           </li>
         
       </ul>

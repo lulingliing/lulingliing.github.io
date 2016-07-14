@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>js阶段第三篇 | Somnus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="函数函数定义：function 函数名(参数列表) {
+// 函数体
+return 返回值;
+}
+function: 函数定义的关键字函数名: 用来标识函数的名字参数列表: 由外部向函数传入的内容函数体: 一些用于执行的语句return 返回值: 从函数内部向外传递内容函数调用格式： 返回值=函数名（参数列表）匿名函数：没有实际名字的函数，例如：div.onclick=function(){">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js阶段第三篇">
+<meta property="og:url" content="http://yoursite.com/2016/07/14/js阶段第三篇/index.html">
+<meta property="og:site_name" content="Somnus">
+<meta property="og:description" content="函数函数定义：function 函数名(参数列表) {
+// 函数体
+return 返回值;
+}
+function: 函数定义的关键字函数名: 用来标识函数的名字参数列表: 由外部向函数传入的内容函数体: 一些用于执行的语句return 返回值: 从函数内部向外传递内容函数调用格式： 返回值=函数名（参数列表）匿名函数：没有实际名字的函数，例如：div.onclick=function(){">
+<meta property="og:updated_time" content="2016-07-14T11:37:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js阶段第三篇">
+<meta name="twitter:description" content="函数函数定义：function 函数名(参数列表) {
+// 函数体
+return 返回值;
+}
+function: 函数定义的关键字函数名: 用来标识函数的名字参数列表: 由外部向函数传入的内容函数体: 一些用于执行的语句return 返回值: 从函数内部向外传递内容函数调用格式： 返回值=函数名（参数列表）匿名函数：没有实际名字的函数，例如：div.onclick=function(){">
+  
+    <link rel="alternate" href="/atom.xml" title="Somnus" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Somnus</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-js阶段第三篇" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/14/js阶段第三篇/" class="article-date">
+  <time datetime="2016-07-14T11:37:38.000Z" itemprop="datePublished">2016-07-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js阶段第三篇
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h5 id="函数定义："><a href="#函数定义：" class="headerlink" title="函数定义："></a>函数定义：</h5><pre><code>function 函数名(参数列表) {
+// 函数体
+return 返回值;
+}
+</code></pre><h6 id="function-函数定义的关键字"><a href="#function-函数定义的关键字" class="headerlink" title="function: 函数定义的关键字"></a>function: 函数定义的关键字</h6><h6 id="函数名-用来标识函数的名字"><a href="#函数名-用来标识函数的名字" class="headerlink" title="函数名: 用来标识函数的名字"></a>函数名: 用来标识函数的名字</h6><h6 id="参数列表-由外部向函数传入的内容"><a href="#参数列表-由外部向函数传入的内容" class="headerlink" title="参数列表: 由外部向函数传入的内容"></a>参数列表: 由外部向函数传入的内容</h6><h6 id="函数体-一些用于执行的语句"><a href="#函数体-一些用于执行的语句" class="headerlink" title="函数体: 一些用于执行的语句"></a>函数体: 一些用于执行的语句</h6><h6 id="return-返回值-从函数内部向外传递内容"><a href="#return-返回值-从函数内部向外传递内容" class="headerlink" title="return 返回值: 从函数内部向外传递内容"></a>return 返回值: 从函数内部向外传递内容</h6><h6 id="函数调用格式：-返回值-函数名（参数列表）"><a href="#函数调用格式：-返回值-函数名（参数列表）" class="headerlink" title="函数调用格式： 返回值=函数名（参数列表）"></a>函数调用格式： 返回值=函数名（参数列表）</h6><h5 id="匿名函数：没有实际名字的函数，例如："><a href="#匿名函数：没有实际名字的函数，例如：" class="headerlink" title="匿名函数：没有实际名字的函数，例如："></a>匿名函数：没有实际名字的函数，例如：</h5><pre><code>div.onclick=function(){
+    //匿名函数
+      //页面元素点击时，自动调用    
+}
+
+var fn=function(){
+     //匿名函数
+ }
+  fn()//匿名函数调用
+</code></pre><ul>
+<li><p>1.无参数无返回值</p>
+<pre><code>function fn1(){         
+    //语句
+    }
+</code></pre><ul>
+<li><p>2.有参数无返回值</p>
+<pre><code>function fn2(argu){         
+   //语句
+   }
+</code></pre></li>
+<li><p>3.无参数有返回值</p>
+<pre><code>function fn3(){         
+  return 123;//返回值
+  }
+</code></pre></li>
+<li><p>4.有参数有返回值</p>
+<pre><code>function fn4(){         
+     return 456;//返回值
+     }
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><h6 id="在行数内部声明的变量-局部变量-，在函数外部并不能访问"><a href="#在行数内部声明的变量-局部变量-，在函数外部并不能访问" class="headerlink" title="在行数内部声明的变量(局部变量)，在函数外部并不能访问"></a>在行数内部声明的变量(局部变量)，在函数外部并不能访问</h6><h6 id="在函数外部声明的变量-全局变量-，在函数内部可以访问"><a href="#在函数外部声明的变量-全局变量-，在函数内部可以访问" class="headerlink" title="在函数外部声明的变量(全局变量)，在函数内部可以访问"></a>在函数外部声明的变量(全局变量)，在函数内部可以访问</h6><h3 id="math对象"><a href="#math对象" class="headerlink" title="math对象"></a>math对象</h3><ul>
+<li><p>取最小的数</p>
+<pre><code>var a=Math.min(1,2,3,4,5)
+console.log(a);//结果为:1
+</code></pre></li>
+<li><p>取最大的数</p>
+<pre><code>var b=Math.max(1,2,3,4,5)
+console.log(b);//结果为:5
+</code></pre></li>
+<li><p>向上取整</p>
+<pre><code>var c=Math.ceil(4.1)
+console.log(c);//结果为:4
+var d=Math.ceil(-4.1)
+console.log(d);//结果为:-4
+</code></pre></li>
+<li><p>向下取整</p>
+<pre><code>var e=Math.floor(4.1)
+console.log(e);//结果为:4
+var f=Math.floor(-4.1)
+console.log(f);//结果为:-5
+</code></pre></li>
+<li><p>四舍五入</p>
+<pre><code>var g=Math.round(4.1)
+console.log(g);//结果为:4
+</code></pre></li>
+<li><p>随机数，范围是0-1；不包括0 ，也不包括1</p>
+<pre><code>var h=Math.random()
+console.log(h);
+console.log(h*(10+1));//0-10之间的随机数
+console.log(h*(10+1)+10);//10-20之间的随机数
+</code></pre></li>
+</ul>
+<h5 id="取一个很大范围内的随机数，函数的表达式如下："><a href="#取一个很大范围内的随机数，函数的表达式如下：" class="headerlink" title="取一个很大范围内的随机数，函数的表达式如下："></a>取一个很大范围内的随机数，函数的表达式如下：</h5><h6 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h6><pre><code>function rand(min,max){
+        var r;
+        r=parseInt(Math.random()*(max-min+1)+(min));
+        return r;
+    }
+    alert (rand(80,1200));
+</code></pre><h6 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h6><pre><code>function rand(min,max){
+        return parseInt(Math.random()*(max-min+1)+        (min));
+    }
+    var r=rand(80,1200);
+    alert(r);
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/14/js阶段第三篇/" data-id="ciqm8xtvf0002moslx32ncs6c" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/07/14/js阶段第二篇/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">js阶段第二篇</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/07/14/js阶段第三篇/">js阶段第三篇</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/14/js阶段第二篇/">js阶段第二篇</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/14/js阶段第1篇/">js阶段第一篇</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/04/第八篇/">第八篇</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/01/第七篇/">第七篇</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 鲁玲玲<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

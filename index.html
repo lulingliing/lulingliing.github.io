@@ -64,6 +64,122 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-js阶段第三篇" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/14/js阶段第三篇/" class="article-date">
+  <time datetime="2016-07-14T11:37:38.000Z" itemprop="datePublished">2016-07-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/14/js阶段第三篇/">js阶段第三篇</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h5 id="函数定义："><a href="#函数定义：" class="headerlink" title="函数定义："></a>函数定义：</h5><pre><code>function 函数名(参数列表) {
+// 函数体
+return 返回值;
+}
+</code></pre><h6 id="function-函数定义的关键字"><a href="#function-函数定义的关键字" class="headerlink" title="function: 函数定义的关键字"></a>function: 函数定义的关键字</h6><h6 id="函数名-用来标识函数的名字"><a href="#函数名-用来标识函数的名字" class="headerlink" title="函数名: 用来标识函数的名字"></a>函数名: 用来标识函数的名字</h6><h6 id="参数列表-由外部向函数传入的内容"><a href="#参数列表-由外部向函数传入的内容" class="headerlink" title="参数列表: 由外部向函数传入的内容"></a>参数列表: 由外部向函数传入的内容</h6><h6 id="函数体-一些用于执行的语句"><a href="#函数体-一些用于执行的语句" class="headerlink" title="函数体: 一些用于执行的语句"></a>函数体: 一些用于执行的语句</h6><h6 id="return-返回值-从函数内部向外传递内容"><a href="#return-返回值-从函数内部向外传递内容" class="headerlink" title="return 返回值: 从函数内部向外传递内容"></a>return 返回值: 从函数内部向外传递内容</h6><h6 id="函数调用格式：-返回值-函数名（参数列表）"><a href="#函数调用格式：-返回值-函数名（参数列表）" class="headerlink" title="函数调用格式： 返回值=函数名（参数列表）"></a>函数调用格式： 返回值=函数名（参数列表）</h6><h5 id="匿名函数：没有实际名字的函数，例如："><a href="#匿名函数：没有实际名字的函数，例如：" class="headerlink" title="匿名函数：没有实际名字的函数，例如："></a>匿名函数：没有实际名字的函数，例如：</h5><pre><code>div.onclick=function(){
+    //匿名函数
+      //页面元素点击时，自动调用    
+}
+
+var fn=function(){
+     //匿名函数
+ }
+  fn()//匿名函数调用
+</code></pre><ul>
+<li><p>1.无参数无返回值</p>
+<pre><code>function fn1(){         
+    //语句
+    }
+</code></pre><ul>
+<li><p>2.有参数无返回值</p>
+<pre><code>function fn2(argu){         
+   //语句
+   }
+</code></pre></li>
+<li><p>3.无参数有返回值</p>
+<pre><code>function fn3(){         
+  return 123;//返回值
+  }
+</code></pre></li>
+<li><p>4.有参数有返回值</p>
+<pre><code>function fn4(){         
+     return 456;//返回值
+     }
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><h6 id="在行数内部声明的变量-局部变量-，在函数外部并不能访问"><a href="#在行数内部声明的变量-局部变量-，在函数外部并不能访问" class="headerlink" title="在行数内部声明的变量(局部变量)，在函数外部并不能访问"></a>在行数内部声明的变量(局部变量)，在函数外部并不能访问</h6><h6 id="在函数外部声明的变量-全局变量-，在函数内部可以访问"><a href="#在函数外部声明的变量-全局变量-，在函数内部可以访问" class="headerlink" title="在函数外部声明的变量(全局变量)，在函数内部可以访问"></a>在函数外部声明的变量(全局变量)，在函数内部可以访问</h6><h3 id="math对象"><a href="#math对象" class="headerlink" title="math对象"></a>math对象</h3><ul>
+<li><p>取最小的数</p>
+<pre><code>var a=Math.min(1,2,3,4,5)
+console.log(a);//结果为:1
+</code></pre></li>
+<li><p>取最大的数</p>
+<pre><code>var b=Math.max(1,2,3,4,5)
+console.log(b);//结果为:5
+</code></pre></li>
+<li><p>向上取整</p>
+<pre><code>var c=Math.ceil(4.1)
+console.log(c);//结果为:4
+var d=Math.ceil(-4.1)
+console.log(d);//结果为:-4
+</code></pre></li>
+<li><p>向下取整</p>
+<pre><code>var e=Math.floor(4.1)
+console.log(e);//结果为:4
+var f=Math.floor(-4.1)
+console.log(f);//结果为:-5
+</code></pre></li>
+<li><p>四舍五入</p>
+<pre><code>var g=Math.round(4.1)
+console.log(g);//结果为:4
+</code></pre></li>
+<li><p>随机数，范围是0-1；不包括0 ，也不包括1</p>
+<pre><code>var h=Math.random()
+console.log(h);
+console.log(h*(10+1));//0-10之间的随机数
+console.log(h*(10+1)+10);//10-20之间的随机数
+</code></pre></li>
+</ul>
+<h5 id="取一个很大范围内的随机数，函数的表达式如下："><a href="#取一个很大范围内的随机数，函数的表达式如下：" class="headerlink" title="取一个很大范围内的随机数，函数的表达式如下："></a>取一个很大范围内的随机数，函数的表达式如下：</h5><h6 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h6><pre><code>function rand(min,max){
+        var r;
+        r=parseInt(Math.random()*(max-min+1)+(min));
+        return r;
+    }
+    alert (rand(80,1200));
+</code></pre><h6 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h6><pre><code>function rand(min,max){
+        return parseInt(Math.random()*(max-min+1)+        (min));
+    }
+    var r=rand(80,1200);
+    alert(r);
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/14/js阶段第三篇/" data-id="ciqm8xtvf0002moslx32ncs6c" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-js阶段第二篇" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/07/14/js阶段第二篇/" class="article-date">
@@ -133,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/14/js阶段第二篇/" data-id="ciqm8s5yi0009lqsll6v02dxn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/14/js阶段第二篇/" data-id="ciqm8xtvi0003mosl78zw2tdv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -264,7 +380,7 @@ parseInt(3.14);结果为:3 保留整数，也就是取整
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/14/js阶段第1篇/" data-id="ciqm8s5xq0000lqslagt76obc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/14/js阶段第1篇/" data-id="ciqm8xtv70000mosl2es6gr8b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -453,7 +569,7 @@ box-flex：3,2,1 表示的占父级的几份，把父级分成几份，第一个
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/04/第八篇/" data-id="ciqm8s5y90007lqsl7hfe9ldv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/04/第八篇/" data-id="ciqm8xtvx0009moslsqytm3df" class="article-share-link">Share</a>
       
       
     </footer>
@@ -691,7 +807,7 @@ box-flex：3,2,1 表示的占父级的几份，把父级分成几份，第一个
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/01/第七篇/" data-id="ciqm8s5yd0008lqslygzmp83p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/01/第七篇/" data-id="ciqm8xtvl0005moslnld6bj3j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -831,7 +947,7 @@ background-repeat:repeat-x;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/30/第六篇/" data-id="ciqm8s5y60006lqsl5foubbsk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/30/第六篇/" data-id="ciqm8xtw0000amosldtihjb3l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -982,7 +1098,7 @@ input:enabled{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/28/第五篇/" data-id="ciqm8s5y40005lqsll3zk5imb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/28/第五篇/" data-id="ciqm8xtvu0008moslhbioiwmf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1090,7 +1206,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/27/第四篇/" data-id="ciqm8s5yj000alqsljgwiybom" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/27/第四篇/" data-id="ciqm8xtw1000bmosl5n4mv3ax" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1173,7 +1289,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/27/第三篇/" data-id="ciqm8s5xz0002lqsluv2ua38v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/27/第三篇/" data-id="ciqm8xtvn0006moslv4byyhe6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1300,74 +1416,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/23/第二篇/" data-id="ciqm8s5y20003lqslkdgrupr8" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-第一篇" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/22/第一篇/" class="article-date">
-  <time datetime="2016-06-22T03:22:41.000Z" itemprop="datePublished">2016-06-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/22/第一篇/">第一篇</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="搭建hexo博客"><a href="#搭建hexo博客" class="headerlink" title="搭建hexo博客"></a>搭建hexo博客</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="nodeJS"><a href="#nodeJS" class="headerlink" title="nodeJS"></a>nodeJS</h3><p>首先下载安装一个nodeJS，也可以通过<a href="https://nodejs.org/en/" target="_blank" rel="external">nodeJS下载地址</a>，测试nodeJS是否安装成功，在终端命令行输入node -v，出现v+数字，例：v4.4.5就表示安装成功啦！</p>
-<h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><p>下载安装一个git,在终端输入git –version,出现git version+数字，例：git version 2.7.4，就表示已经安装好了，接下来就是搭建hexo了。</p>
-<h2 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h2><h3 id="安装本地hexo"><a href="#安装本地hexo" class="headerlink" title="安装本地hexo"></a>安装本地hexo</h3><p>1.在终端输入npm install hexo -g 回车，如果报错出现root/Administrator,则输入node npm install hexo -g 回车，则出现如下图，输入管理员密码，回车</p>
-<p><img src="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/图1.jpg" alt="图1"></p>
-<p>2.测试hexo是否安装成功，在终端输入hexo回车,如若出现如下图所示的代码，则安装成功。</p>
-<p><img src="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/图2.png" alt="图2">  </p>
-<h3 id="新建一个文件夹（ps-以桌面创建为例）"><a href="#新建一个文件夹（ps-以桌面创建为例）" class="headerlink" title="新建一个文件夹（ps:以桌面创建为例）"></a>新建一个文件夹（ps:以桌面创建为例）</h3><p>1.在终端输入cd Desktop回车，进入电脑桌面</p>
-<p>2.在终端输入mkdir blog回车，创建了一个名为blog的文件夹</p>
-<p>3.在终端输入cd blog回车，进入该文件夹</p>
-<p>4.当前的blog是空的，在终端输入hexo init,回车，就会出现很多文件夹，初始化blog文件夹，陈成功之后就会是如下图：</p>
-<p><img src="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/图3.png" alt="图3">  </p>
-<p>5.在终端输入hexo server回车，在本地运行，成功之后在终端会出现一个本地博客地址<a href="http://localhost:4000/，点击进入。按住Ctrl+c退出hexo运行" target="_blank" rel="external">http://localhost:4000/，点击进入。按住Ctrl+c退出hexo运行</a></p>
-<p>6.在终端输入hexo g回车，生成HTML文件</p>
-<p>7.在终端输入hexo d回车，发布到线上</p>
-<h3 id="注册一个账号"><a href="#注册一个账号" class="headerlink" title="注册一个账号"></a>注册一个账号</h3><p>1.在注册界面注册一个用户名，填写一个邮箱与密码，然后直接进入里面</p>
-<p>2.注册一个github账号，在终端输入ssh-keygen,连续回车三次，如下图：</p>
-<p><img src="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/图4.png" alt="图4"> </p>
-<p>3.在终端输入vim ~/.ssh/id_rsa.pub命令，复制ssh-key的值（ps:一个波浪线都不要多复制），在终端输入：q回车，打开本地博客，点击settings,进入里面的SSH and GPG keys，在key的框里将ssh-key的值粘贴进去。</p>
-<h3 id="验证本机机器与github"><a href="#验证本机机器与github" class="headerlink" title="验证本机机器与github"></a>验证本机机器与github</h3><p>1.在终端输入“git config –global user.name”用户名”（例：git config –global user.name”lulingliing”）</p>
-<p>2.在终端输入“git config –global user.email”邮箱地址”（例：git config –global user.email”1552442072@qq.com”）</p>
-<p>3.在本地博客搭建域名仓库，repository必须与注册的用户名一致。</p>
-<h3 id="配置config-yml"><a href="#配置config-yml" class="headerlink" title="配置config.yml"></a>配置config.yml</h3><p>1.在blog文件夹中的config.yml文件下的deploy下写空格+git</p>
-<p>2.在本地博客中将域名仓库HTTPS的地址写在repo下（ps:在config.yml中写代码都需要在冒号后面加空格）如下图：</p>
-<p><img src="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/图5.png" alt="图5"> </p>
-<p>这样一个博客就创建成功啦！</p>
-<h3 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h3><ul>
-<li><p>先在终端输入hexo new回车，然后按照下面方法进入这些文件夹，blog——source——_posts,该文件夹下就会有一个自己命名的文件。</p>
-</li>
-<li><p>接下来就可以在该文件中写自己的博客了，在终端输入hexo server回车，在本地运行；在终端输入hexo g回车，生成HTML文件；在终端输入hexo d回车，发布到线上，这样就能在线看到你的博客内容啦！</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/22/第一篇/" data-id="ciqm8s5y30004lqsl9jetmg1w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/23/第二篇/" data-id="ciqm8xtvr0007mosld8b3fjby" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1411,6 +1460,10 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       <ul>
         
           <li>
+            <a href="/2016/07/14/js阶段第三篇/">js阶段第三篇</a>
+          </li>
+        
+          <li>
             <a href="/2016/07/14/js阶段第二篇/">js阶段第二篇</a>
           </li>
         
@@ -1424,10 +1477,6 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
         
           <li>
             <a href="/2016/07/01/第七篇/">第七篇</a>
-          </li>
-        
-          <li>
-            <a href="/2016/06/30/第六篇/">第六篇</a>
           </li>
         
       </ul>
