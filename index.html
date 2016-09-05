@@ -64,6 +64,173 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-PHP第一篇" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/05/PHP第一篇/" class="article-date">
+  <time datetime="2016-09-05T14:43:18.000Z" itemprop="datePublished">2016-09-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/05/PHP第一篇/">PHP第一篇</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h3><h4 id="文件打开模式"><a href="#文件打开模式" class="headerlink" title="文件打开模式"></a>文件打开模式</h4><p><img src="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/文件打开模式.jpg" alt="图1"></p>
+<h4 id="读取文件的四种方法-前提是有一个index-txt文件"><a href="#读取文件的四种方法-前提是有一个index-txt文件" class="headerlink" title="读取文件的四种方法(前提是有一个index.txt文件)"></a>读取文件的四种方法(前提是有一个index.txt文件)</h4><p>######fopen打开文件  fclose关闭文件</p>
+<ul>
+<li><p>第一种fread):读取整个文件(</p>
+<pre><code>$fh=fopen(&quot;index.txt&quot;,&quot;a+&quot;);
+$str=fread($fh,filesize(&quot;index.txt&quot;));
+fclose($fh);
+</code></pre></li>
+<li><p>第二种(fgets):通过文件指针获取的是一行一行(则需要用一个循环实现全文的读取)，feof文件指针，如果文件指针指向结尾就是true</p>
+<pre><code>$fh=fopen(&quot;index.txt&quot;,&quot;a+&quot;);
+while(!feof($fh)){
+    $str=fgets($fh);
+        echo $str.&quot;&lt;hr&gt;&quot;;
+}
+fclose($fh);
+</code></pre></li>
+<li><p>第三种:根据一行得到一个一个的数组，不需要配合feof与fopen，fclose</p>
+<pre><code>$arr=file(&quot;index.txt&quot;);
+var_dump($arr);
+</code></pre></li>
+<li><p>第四种:常用的读取文件的方法 ，不需要feof与fopen，fclose</p>
+</li>
+</ul>
+<pre><code>$str=file_get_contents(&quot;index.txt&quot;);
+echo $str;
+</code></pre><h4 id="写入文件"><a href="#写入文件" class="headerlink" title="写入文件"></a>写入文件</h4><ul>
+<li><p>w是替换  a是追加</p>
+</li>
+<li><p>第一种:fwrite（需要fopen与fclose，可追加可替换）</p>
+</li>
+</ul>
+<pre><code>$fh=fopen(&quot;index.txt&quot;,&quot;a&quot;);
+fwrite($fh,&quot;nihaoshijie&quot;);
+fclose($fh);
+$str=file_get_contents(&quot;index.txt&quot;);
+echo $str;
+</code></pre><ul>
+<li><p>第二种:不需要fopen与fclose，直接替换</p>
+<pre><code>file_put_contents(&quot;index.txt&quot;,&quot;1111&quot;);
+</code></pre></li>
+</ul>
+<h4 id="复制、重命名、删除文件"><a href="#复制、重命名、删除文件" class="headerlink" title="复制、重命名、删除文件"></a>复制、重命名、删除文件</h4><pre><code>&lt;?php 
+ header(&quot;Content-type: text/html; charset=utf-8&quot;);//解析中文
+     //复制文件
+     if(copy(&quot;index.txt&quot;, &quot;test.txt&quot;)){
+         echo &quot;复制成功&quot;;
+     }else{
+         echo &quot;复制失败&quot;;
+     }
+
+     //修改文件名
+     if(rename(&quot;test.txt&quot;,&quot;copy.txt&quot;)){
+         echo &quot;修改成功&quot;;
+     }else{
+         echo &quot;修改失败&quot;;
+     }
+
+     //删除文件
+      if(unlink(&quot;copy.txt&quot;)){
+         echo &quot;删除成功&quot;;
+     }else{
+         echo &quot;删除失败&quot;;
+     }
+?&gt;
+</code></pre><h4 id="读取目录"><a href="#读取目录" class="headerlink" title="读取目录"></a>读取目录</h4><ul>
+<li><p>1.opendir()<br>resource opendir ( string path [, resource context] )<br>打开目录句柄;</p>
+</li>
+<li><p>2.closedir()<br>void closedir ( resource dir_handle )<br>关闭目录句柄</p>
+</li>
+<li><p>3.readdir() 一次只能获取一个</p>
+</li>
+<li><p>4.scandir返回一个包含所有的目录和文件的数组;</p>
+</li>
+</ul>
+<p>例：</p>
+<pre><code>$dh=opendir(&quot;.&quot;);
+while($files=readdir($dh)){
+    echo $files.&quot;&lt;hr&gt;&quot;;
+}
+closedir($dh);
+$arr=scandir(&quot;..&quot;);
+print_r($arr);
+</code></pre><ul>
+<li><p>5.增加一个目录</p>
+<pre><code>mkdir(&quot;haha&quot;);
+</code></pre></li>
+<li><p>6.删除一个目录</p>
+<pre><code>rmdir(&quot;haha&quot;);
+</code></pre></li>
+</ul>
+<h4 id="其他文件操作函数"><a href="#其他文件操作函数" class="headerlink" title="其他文件操作函数"></a>其他文件操作函数</h4><ul>
+<li><p>1.filectime()获取时间戳</p>
+<pre><code>date_default_timezone_set(&apos;PRC&apos;);//设置时区
+$t=filectime(&quot;index.txt&quot;);
+echo $t.&quot;&lt;hr&gt;&quot;;      
+echo date(&quot;Y-m-d H:i:s&quot;,$t);
+</code></pre></li>
+</ul>
+<ul>
+<li><p>2.fileatime() 返回文件的最后改变时间;</p>
+</li>
+<li><p>3.filemtime() 返回文件的最后修改时间;</p>
+</li>
+<li><p>注：”最后改变时间”不同于 “最后修改时间”。最后改变时间指的是对文件inode数据的任何改变，包括改变权限，所属组，拥有者等; 而最后修改时间指的是对文件内容的修改</p>
+</li>
+<li><p>4.file_exists() 检查文件或目录是否存在，如果存在返回true, 否则返回false;</p>
+</li>
+<li><p>5.is_readable() 判断文件是否可读，如果文件存在并且可读，则返回true;</p>
+</li>
+<li><p>6.is_writable() 判断文件是否可写，如果文件存在并且可写，则返回true;</p>
+</li>
+</ul>
+<h4 id="解析目录路径函数"><a href="#解析目录路径函数" class="headerlink" title="解析目录路径函数"></a>解析目录路径函数</h4><ul>
+<li><p>1.basename(),返回路径中的文件名部份，当指定了可选参数suffix会将这部分内容去掉;</p>
+</li>
+<li><p>2.dirname(),返回路径中的目录部份;</p>
+</li>
+<li><p>3.pathinfo(),返回一个关联数组，其中包括路径中的四个部份：目录名 dirname，文件名 filename， extension扩展名，basename文件名+扩展名(如果有扩展名的话)</p>
+<pre><code>$path=&quot;/home/www/data/users.txt&quot;;
+$filename=basename($path,&quot;.txt&quot;);//参数是去掉右面.txt
+echo $filename;
+$dirname=dirname($path);//得到目录结构
+echo $dirname;
+$arr=pathinfo($path);
+var_dump($arr);
+</code></pre></li>
+<li><p>4.chmod(),修改文件目录权限</p>
+<pre><code>chmod(&quot;ccc&quot;,0755);//八进制数，正确的 mode 值 
+</code></pre></li>
+</ul>
+<pre><code>[注意:]mode 参数包含三个八进制数按顺序分别指定了所有者、所有者所在的组以及所有人的访问限制。每一部分都可以通过加入所需的权限来计算出所要的权限。数字1表示使文件可执行，数字2表示使文件可写，数字4表示使文件可读。3=1+2(也就是可执行可写)，以此类推，最大可以到7
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/05/PHP第一篇/" data-id="cisq5vjso00059mz2ndtphlc8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-js阶段第三篇" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/07/14/js阶段第三篇/" class="article-date">
@@ -170,7 +337,7 @@ console.log(h*(10+1)+10);//10-20之间的随机数
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/14/js阶段第三篇/" data-id="ciqm8xtvf0002moslx32ncs6c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/14/js阶段第三篇/" data-id="cisq5vjsi00029mz2grokd7zn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -249,7 +416,7 @@ console.log(h*(10+1)+10);//10-20之间的随机数
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/14/js阶段第二篇/" data-id="ciqm8xtvi0003mosl78zw2tdv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/14/js阶段第二篇/" data-id="cisq5vjt9000b9mz2vm2mv7rq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -380,7 +547,7 @@ parseInt(3.14);结果为:3 保留整数，也就是取整
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/14/js阶段第1篇/" data-id="ciqm8xtv70000mosl2es6gr8b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/14/js阶段第1篇/" data-id="cisq5vjsf00019mz2itqan72l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -569,7 +736,7 @@ box-flex：3,2,1 表示的占父级的几份，把父级分成几份，第一个
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/04/第八篇/" data-id="ciqm8xtvx0009moslsqytm3df" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/04/第八篇/" data-id="cisq5vjsu00089mz2fxush8ar" class="article-share-link">Share</a>
       
       
     </footer>
@@ -807,7 +974,7 @@ box-flex：3,2,1 表示的占父级的几份，把父级分成几份，第一个
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/01/第七篇/" data-id="ciqm8xtvl0005moslnld6bj3j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/01/第七篇/" data-id="cisq5vjsl00039mz2w73674pu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -947,7 +1114,7 @@ background-repeat:repeat-x;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/30/第六篇/" data-id="ciqm8xtw0000amosldtihjb3l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/30/第六篇/" data-id="cisq5vjsx00099mz2omwot2qk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1098,7 +1265,7 @@ input:enabled{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/28/第五篇/" data-id="ciqm8xtvu0008moslhbioiwmf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/28/第五篇/" data-id="cisq5vjst00079mz2tl6ale89" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1206,7 +1373,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/27/第四篇/" data-id="ciqm8xtw1000bmosl5n4mv3ax" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/27/第四篇/" data-id="cisq5vjtb000c9mz2zc1psq73" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1289,134 +1456,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/27/第三篇/" data-id="ciqm8xtvn0006moslv4byyhe6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-第二篇" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/23/第二篇/" class="article-date">
-  <time datetime="2016-06-23T12:45:25.000Z" itemprop="datePublished">2016-06-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/23/第二篇/">第二篇</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="css3的单位与响应式布局"><a href="#css3的单位与响应式布局" class="headerlink" title="css3的单位与响应式布局"></a>css3的单位与响应式布局</h1><h2 id="倍数单位"><a href="#倍数单位" class="headerlink" title="倍数单位"></a>倍数单位</h2><h3 id="1-em是相对单位"><a href="#1-em是相对单位" class="headerlink" title="1. em是相对单位"></a>1. em是相对单位</h3><ul>
-<li>相对父级设置和自己的字号设置</li>
-</ul>
-<p>注意：h1~h6都有默认的1.5em,当不给h标签设置font-size，就会按照父级的1.5em计算，<br>当给h2设置了font-size,就会按照设置的倍数计算</p>
-<pre><code>&lt;pre&gt;
-&lt;style&gt;
-    .nav{
-        width:500px;
-        height:300px;
-        border:1px red solid;
-        font-size:12px;
-    }
-    .nav p{
-        font-size:4em;
-    }
-    .nav h2{
-        font-size:2em;
-    }
-&lt;/style&gt;
-&lt;div class=“nav”&gt;
-    &lt;p&gt;世界你好&lt;/p&gt;
-    &lt;h2&gt;一切皆有可能&lt;/h2&gt;
-&lt;/div&gt;
-&lt;/pre&gt;
-</code></pre><p>上面的这样计算下来p标签的字号大小为：12<em>4=48px;h2标签的字号大小为12</em>2=24px，但是如果不给h2设置fong-size就会按照父级的1.5em设置，也就是12*1.5=18px;</p>
-<h3 id="2-rem是根单位"><a href="#2-rem是根单位" class="headerlink" title="2.rem是根单位"></a>2.rem是根单位</h3><ul>
-<li>相对于根字体(ps:根据HTML的字号）的大小来设置自己的字号大小</li>
-</ul>
-<p>注意：系统默认的为16px(当HTML没有设置字体的大小就会按照默认的16px计算)，系统最小的字号为12px(ps:当在HTML中设置的字体小于12px,系统会按照最小的12px计算)</p>
-<h2 id="百分比单位"><a href="#百分比单位" class="headerlink" title="百分比单位"></a>百分比单位</h2><ul>
-<li><p>vw,vh是相对于窗口的单位(指宽度跟高度)</p>
-</li>
-<li><p>maxwidth maxheight minwidth minheight 这些是设置的最大的跟最小的宽高度（ps:不是百分比单位，是设置具体的像素）</p>
-</li>
-</ul>
-<h2 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h2><ul>
-<li>响应式布局是根据浏览器的界面大小来改变页面的大小，使用百分比单位，不设置固定的宽高，例：</li>
-</ul>
-<pre><code> &lt;pre&gt;
-   &lt;style&gt;
-        body{
-        margin:0;
-        }
-    ul{
-        margin:0;
-        padding:0;
-        list-style-type: none;
-        }
-    .div1{
-        width: 75%;
-        max-width: 1200px;
-        min-width: 600px;
-        margin:100px auto;
-        background: pink;
-        overflow: hidden;
-        }
-    .div1 li{
-        width: 31%;
-        float: left;
-        min-width: 300px;
-        margin-right: 2%;
-
-        }
-    .div1 img{
-        width:100%; 
-        }
-    &lt;/style&gt;
-   &lt;body&gt;
-&lt;ul  class=&quot;div1&quot;&gt;
-    &lt;li&gt;
-        &lt;img src=&quot;fengjing.jpg&quot; alt=&quot;风景&quot;&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;img src=&quot;fengjing.jpg&quot; alt=&quot;风景&quot;&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;img src=&quot;fengjing.jpg&quot; alt=&quot;风景&quot;&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;img src=&quot;fengjing.jpg&quot; alt=&quot;风景&quot;&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;img src=&quot;fengjing.jpg&quot; alt=&quot;风景&quot;&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;img src=&quot;fengjing.jpg&quot; alt=&quot;风景&quot;&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
-&lt;/body&gt;
-    &lt;/pre&gt;
-</code></pre><p> 运行之后的界面为三列缩小窗口会变成两列甚至是一列，拉大窗口会一直窗口的90%(在不超过设置的最大的宽度下)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/23/第二篇/" data-id="ciqm8xtvr0007mosld8b3fjby" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/27/第三篇/" data-id="cisq5vjt8000a9mz2cnk2skiz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1447,7 +1487,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li></ul>
     </div>
   </div>
 
@@ -1458,6 +1498,10 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/09/05/PHP第一篇/">PHP第一篇</a>
+          </li>
         
           <li>
             <a href="/2016/07/14/js阶段第三篇/">js阶段第三篇</a>
@@ -1473,10 +1517,6 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
         
           <li>
             <a href="/2016/07/04/第八篇/">第八篇</a>
-          </li>
-        
-          <li>
-            <a href="/2016/07/01/第七篇/">第七篇</a>
           </li>
         
       </ul>
