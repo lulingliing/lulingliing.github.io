@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Somnus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="node.js框架的基础使用node.js的出现1、JavaScript不能handle大规模的代码，在Java中有一个重要带概念——package，逻辑上相关的代码组织到同一个包内，那么外部如果使用，直接import对应的package即可。2、因此node.js被开发出来，实现了类似于与java中的包功能（模块），很多优秀的前端工程师设计了不同的功能模块，程序员在需要的时候只要进行模块引入即可">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Somnus">
+<meta property="og:url" content="http://yoursite.com/2016/11/02/node.js框架的基础使用/index.html">
+<meta property="og:site_name" content="Somnus">
+<meta property="og:description" content="node.js框架的基础使用node.js的出现1、JavaScript不能handle大规模的代码，在Java中有一个重要带概念——package，逻辑上相关的代码组织到同一个包内，那么外部如果使用，直接import对应的package即可。2、因此node.js被开发出来，实现了类似于与java中的包功能（模块），很多优秀的前端工程师设计了不同的功能模块，程序员在需要的时候只要进行模块引入即可">
+<meta property="og:image" content="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/图44.png">
+<meta property="og:image" content="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/图11.png">
+<meta property="og:image" content="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/图22.png">
+<meta property="og:image" content="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/图33.png">
+<meta property="og:updated_time" content="2016-11-02T11:48:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Somnus">
+<meta name="twitter:description" content="node.js框架的基础使用node.js的出现1、JavaScript不能handle大规模的代码，在Java中有一个重要带概念——package，逻辑上相关的代码组织到同一个包内，那么外部如果使用，直接import对应的package即可。2、因此node.js被开发出来，实现了类似于与java中的包功能（模块），很多优秀的前端工程师设计了不同的功能模块，程序员在需要的时候只要进行模块引入即可">
+<meta name="twitter:image" content="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/图44.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Somnus" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Somnus</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-node.js框架的基础使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/02/node.js框架的基础使用/" class="article-date">
+  <time datetime="2016-11-02T11:48:58.000Z" itemprop="datePublished">2016-11-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="node-js框架的基础使用"><a href="#node-js框架的基础使用" class="headerlink" title="node.js框架的基础使用"></a>node.js框架的基础使用</h2><h3 id="node-js的出现"><a href="#node-js的出现" class="headerlink" title="node.js的出现"></a>node.js的出现</h3><h5 id="1、JavaScript不能handle大规模的代码，在Java中有一个重要带概念——package，逻辑上相关的代码组织到同一个包内，那么外部如果使用，直接import对应的package即可。"><a href="#1、JavaScript不能handle大规模的代码，在Java中有一个重要带概念——package，逻辑上相关的代码组织到同一个包内，那么外部如果使用，直接import对应的package即可。" class="headerlink" title="1、JavaScript不能handle大规模的代码，在Java中有一个重要带概念——package，逻辑上相关的代码组织到同一个包内，那么外部如果使用，直接import对应的package即可。"></a>1、JavaScript不能handle大规模的代码，在Java中有一个重要带概念——package，逻辑上相关的代码组织到同一个包内，那么外部如果使用，直接import对应的package即可。</h5><h5 id="2、因此node-js被开发出来，实现了类似于与java中的包功能（模块），很多优秀的前端工程师设计了不同的功能模块，程序员在需要的时候只要进行模块引入即可。"><a href="#2、因此node-js被开发出来，实现了类似于与java中的包功能（模块），很多优秀的前端工程师设计了不同的功能模块，程序员在需要的时候只要进行模块引入即可。" class="headerlink" title="2、因此node.js被开发出来，实现了类似于与java中的包功能（模块），很多优秀的前端工程师设计了不同的功能模块，程序员在需要的时候只要进行模块引入即可。"></a>2、因此node.js被开发出来，实现了类似于与java中的包功能（模块），很多优秀的前端工程师设计了不同的功能模块，程序员在需要的时候只要进行模块引入即可。</h5><h3 id="node-js的基本使用"><a href="#node-js的基本使用" class="headerlink" title="node.js的基本使用"></a>node.js的基本使用</h3><h5 id="注-：使用了webstorm"><a href="#注-：使用了webstorm" class="headerlink" title="[注]：使用了webstorm"></a>[注]：使用了webstorm</h5><h4 id="加载模块的使用"><a href="#加载模块的使用" class="headerlink" title="加载模块的使用"></a>加载模块的使用</h4><ul>
+<li><p>加载当前目录的模块</p>
+<p> 要导出一个属性或者方法使用:module.exports=xxx(需要导出的属性和方法)</p>
+</li>
+<li><p>加载非当前目录下面的模块</p>
+<p> 首先会看当前目录是否有一个node_modules，如果有就看进入里面查找是否有叫模块名称的文件或者是否有叫模块名称的文件夹（如果是模块名称的文件夹需要看一下文件夹内部是否有index.js或者package.json中是否有设置main属性）;如果当前目录中没有node_modules，会向上查找（可以通过：console.log(module)输出查看）。</p>
+</li>
+<li><p>加载原生模块</p>
+<p>  原生模块直接在文件头部引入即可。</p>
+</li>
+</ul>
+<h4 id="npm-node的包管理器"><a href="#npm-node的包管理器" class="headerlink" title="npm(node的包管理器)"></a>npm(node的包管理器)</h4><p>可以在终端中通过npm命令安装node的包</p>
+<h4 id="http服务器模块"><a href="#http服务器模块" class="headerlink" title="http服务器模块"></a>http服务器模块</h4><ul>
+<li><p>简单的发起一个请求</p>
+<pre><code> var http = require(“http”);//引入一个http的模块   var server = http.createServer(function (req,res) {   //向前台响应内容(数据)
+  res.end(“大家好,我是唐菜也”);         });
+  //listen(端口,域名,成功的回调)     server.listen(8080,”localhost”, function () {  console.log(“服务器启动成功!”); });
+</code></pre></li>
+</ul>
+<ul>
+<li><p>处理请求</p>
+<pre><code>var server=http.createServer(function(req,res){
+var urlstr=req.url;//获取请求的路径
+var urlObj=url.parse(urlstr,true);
+req.on(&quot;data&quot;,function(chunk){//获取POST方式发送过来的数据
+console.log(chunk.toString());//chunk:数据块
+})
+res.writeHead(200,    
+{name:&quot;lll&quot;,pass:&quot;123&quot;,&quot;content-Type&quot;:&quot;text/html;charset=utf-8&quot;});
+res.write(&quot;hello&quot;);
+res.write(&quot;lisi&quot;);
+res.end();
+});
+server,listen(8080);
+</code></pre></li>
+<li><p>上传文件处理</p>
+</li>
+</ul>
+<p><img src="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/图44.png" alt="图1"></p>
+<h4 id="文件处理模块"><a href="#文件处理模块" class="headerlink" title="文件处理模块"></a>文件处理模块</h4><ul>
+<li><p>小数据文件读取</p>
+<p>  readFile(异步)；readFileSync(同步)</p>
+</li>
+<li><p>小数据文件写入：（参数1：写入的文件名；参数2：文件内容；参数3：配置参数；参数4：回调）</p>
+<pre><code>var fs=require(&quot;fs&quot;);
+fs.writeFile(args1,args2,{flag:&quot;1&quot;},function(){
+
+})
+</code></pre></li>
+<li><p>小数据文件拷贝</p>
+<pre><code>fs.readFile(&quot;读取文件名&quot;,“utf8”,function（err,data）{
+fs.writeFile(&quot;书写文件名&quot;,data,        
+{encoding:&quot;utf8&quot;},function(){
+})
+})
+</code></pre></li>
+<li><p>大数据文件读取文件流</p>
+<pre><code>var fs=require(&quot;fs&quot;);
+var fs=fs.createReadStream(&quot;文件名&quot;);
+</code></pre></li>
+<li><p>大数据文件写入文件流</p>
+<pre><code>var fs=require(&quot;fs&quot;);
+&lt;!--没有的话相当于创建一个文件--&gt;
+var ws=fs.createWriteStream(&quot;文件名&quot;);
+</code></pre></li>
+</ul>
+<ul>
+<li>大数据文件拷贝：</li>
+</ul>
+<p>1.方法一：</p>
+<pre><code>var fs=require(&quot;fs&quot;);
+var rs=fs.createReadStream(&quot;读取文件夹名字&quot;);
+var ws=fs.createWriteStream(&quot;写入文件夹名字&quot;);
+&lt;!--data方法表示读取调用对象的数据--&gt;
+rs.on(&apos;data&apos;,function(data_content){
+    ws.write(data_content,function(){
+    })
+})
+</code></pre><p>2.方法二：pipe方法</p>
+<pre><code>var fs=require(&quot;fs&quot;);
+fs.createReadStream(&quot;读取文件夹名    
+字&quot;).pipe(fs.createWriteStream(&quot;写入文件夹名字&quot;));
+</code></pre><ul>
+<li><p>创建目录</p>
+<pre><code>第二个数字表示的是权限,最高权限为admini
+fs.mkdir(&quot;test&quot;,0777,function(err){});
+</code></pre></li>
+<li><p>读取目录(得到的是数组)</p>
+<pre><code>fs.readdir(&quot;jia&quot;,function(err,arr){
+        if(err){
+           console.log(err);
+    }else{
+           console.log(arr);
+       }
+});
+</code></pre></li>
+<li><p>查看文件或者目录详情</p>
+<pre><code>fs.stat(&quot;jia&quot;,function(err,data){
+    if(err){
+       console.log(err);
+}else{
+       console.log(data);
+   }
+   })
+</code></pre></li>
+<li><p>相对路径获取绝对路径</p>
+<pre><code>fs.realpath(&quot;buffer.js&quot;,function(err,data){
+    console.log(data);
+})
+</code></pre></li>
+<li><p>修改文件名</p>
+<pre><code>将nihao.js改成tes.js
+fs.rename(&quot;nihao.js&quot;,&quot;tes.js&quot;,function(err){
+        if(err){
+            console.log(err);
+        }
+});
+</code></pre></li>
+<li><p>判断文件是否存在</p>
+<pre><code>fs.exists(&quot;test/1.jpg&quot;,function(){
+         console.log(exists);
+})
+</code></pre></li>
+</ul>
+<h4 id="继承模块-utile"><a href="#继承模块-utile" class="headerlink" title="继承模块(utile)"></a>继承模块(utile)</h4><ul>
+<li><p>对象中继承模块的使用</p>
+<pre><code>var util=require(&quot;util&quot;);
+//通过这种方式可以继承父类原型中的方法和属性
+util.inherits(Child,Parent);
+</code></pre></li>
+<li><p>类型判断、正则验证</p>
+<pre><code>var util=require(‘util’);
+util.isArray([]);
+util.isRegExp(/\d/);
+</code></pre></li>
+</ul>
+<h4 id="事件模块"><a href="#事件模块" class="headerlink" title="事件模块"></a>事件模块</h4><h6 id="事件又称为发布订阅模式，又称为观察者模式，当主题对象发生变化时-会通知所有的观察者对象-更新自己的行动"><a href="#事件又称为发布订阅模式，又称为观察者模式，当主题对象发生变化时-会通知所有的观察者对象-更新自己的行动" class="headerlink" title="事件又称为发布订阅模式，又称为观察者模式，当主题对象发生变化时,会通知所有的观察者对象,更新自己的行动"></a>事件又称为发布订阅模式，又称为观察者模式，当主题对象发生变化时,会通知所有的观察者对象,更新自己的行动</h6><pre><code>var events = require(&apos;events&apos;);
+function Lol(name,fn){
+    this.name = name;
+    this.fn = fn;
+}
+var da = new Dashen();
+var lol1 = new Lol(&quot;小一&quot;,function(){
+    console.log(&apos;大哥带带我&apos;);
+});
+var lol2 = new Lol(&quot;小赤佬&quot;,function(){
+       console.log(&apos;别说了午饭我请了&apos;);
+});
+&lt;!--设置最大的监听数量--&gt;
+da.setMaxListeners(1);
+&lt;!--绑定事件--&gt;
+da.on(&quot;play&quot;,lol1.fn);
+da.addListener(&quot;play&quot;,lol2.fn);
+&lt;!--发射事件--&gt;
+da.emit(&quot;play&quot;);
+&lt;!--移除掉单个事件--&gt;
+da.removeAllListeners(&quot;play&quot;,lol2.fn);
+</code></pre><h4 id="buffer对象"><a href="#buffer对象" class="headerlink" title="buffer对象"></a>buffer对象</h4><ul>
+<li><p>创建buffer对象</p>
+<pre><code>//new 的都是类   不是模块
+//第一种创建方法(直接)
+var buf=new Buffer(12);//创建长度为12的数组
+
+    //全部填充为ff,fill(填充的值,开始位置,结束位置(没有即全部));
+buf.fill(255,0);
+
+//第二种创建方法(数组)
+var buf1=new Buffer([1,255,254])
+
+//第三种创建方法(字符串)
+var buf2=new Buffer(&quot;汤菜也&quot;);
+</code></pre></li>
+</ul>
+<ul>
+<li><p>buffer对象转化为字符串</p>
+<pre><code>//第一种
+var buf1=new Buffer([0xe5,0x94,0x90,0xe8,0x8f]);
+console.log(buf1,toString());
+//第二种
+var             StringDecoder=require(&quot;string_decoder&quot;).StringDecoder;
+var decoder=new StringDecoder();
+console.log(decoder.write(buff));
+</code></pre></li>
+</ul>
+<h4 id="express模块"><a href="#express模块" class="headerlink" title="express模块"></a>express模块</h4><h6 id="Express-是一个简洁而灵活的-node-js-Web应用框架-提供了一系列强大特性帮助你创建各种-Web-应用，和丰富的-HTTP-工具。使用-Express-可以快速地搭建一个完整功能的网站。"><a href="#Express-是一个简洁而灵活的-node-js-Web应用框架-提供了一系列强大特性帮助你创建各种-Web-应用，和丰富的-HTTP-工具。使用-Express-可以快速地搭建一个完整功能的网站。" class="headerlink" title="Express 是一个简洁而灵活的 node.js Web应用框架, 提供了一系列强大特性帮助你创建各种 Web 应用，和丰富的 HTTP 工具。使用 Express 可以快速地搭建一个完整功能的网站。"></a>Express 是一个简洁而灵活的 node.js Web应用框架, 提供了一系列强大特性帮助你创建各种 Web 应用，和丰富的 HTTP 工具。使用 Express 可以快速地搭建一个完整功能的网站。</h6><ul>
+<li><p>express初始化</p>
+<pre><code>var express=require(&quot;express&quot;);
+var app=express();
+</code></pre></li>
+<li><p>处理请求的方法 — 根据请求路径来处理客户端发出的GET请求<br>app.get(path,cb);</p>
+<p>  path:为请求的路径；</p>
+<p>  cb:第二个参数为处理函数的回调,有两个参数request和response</p>
+<p>  代码案例:</p>
+<pre><code>app.get(&apos;/&apos;,function(req,res){
+    res.send(req.query);
+    res.send(&quot;hello&quot;);
+});
+app.get(&apos;/list.html&apos;,function(req,res){
+        res.sendFile(__dirname+&quot;/html/                    index.html&quot;);
+});
+app.post(&apos;/html/post&apos;,function (req,res){
+        res.end(&apos;post&apos;);
+});
+app.all(&quot;*&quot;,function(req,res){
+    console.log(req.url);
+    res.sendFile(__dirname+&quot;/html&quot;+req.url);
+})
+app.listen(9099);
+</code></pre></li>
+<li><p>参数：</p>
+</li>
+</ul>
+<h5 id="1、请求参数："><a href="#1、请求参数：" class="headerlink" title="1、请求参数："></a>1、请求参数：</h5><p>req.host:返回请求头里取的主机名(不含端口号)</p>
+<p>req.path:返回请求的url的路径名</p>
+<p>req.query:是一个可获取客户端get请求路径参数的对象属性,包含着被解析过的请求参数对象</p>
+<p>req.params:获取路由的parameters</p>
+<h5 id="2、返回参数"><a href="#2、返回参数" class="headerlink" title="2、返回参数"></a>2、返回参数</h5><p>res.send();返回数据,默认会转为字符串,编码为utf8;</p>
+<p>res.sendFile();返回文件</p>
+<p>res.sendStatus();返回状态码</p>
+<p>案例：</p>
+<pre><code>//中央发了100快钱 
+var express = require(&quot;express&quot;);
+var app = express();
+
+
+//app.use相当于if  else if    else
+app.use(function (req,res,next) {
+    req.money = 100;
+    next();
+});
+
+//市政府 
+app.use(function (req,res,next) {
+    req.money -= 20;
+//如果next传了一个不为null的参数,说明有错,会中止其他中间件并执行错误处理中间件 
+// 如果next 一直都是传的是空值,那就表示中间都没有报错,则最后走*函数
+    next();
+});
+//村 
+app.use(function (req,res,next) {
+    req.money -= 50;
+    next(&quot;钱丢了&quot;);
+});
+//错误处理中间件 
+app.use(function (err,req,res,next) {
+    console.error(err);
+       res.writeHead(200, {&apos;Content-Type&apos;: &apos;text/        html;charset=utf-8&apos;});
+    res.end(err);
+});
+
+app.all(&apos;/*&apos;,function (req,res) {
+    res.writeHead(200, {&apos;Content-Type&apos;: &apos;text/    html;charset=utf-8&apos;});
+    res.send(&quot;&quot; + req.money);
+});
+app.listen(8080);
+</code></pre><ul>
+<li>模板引擎ejs:模板引擎-首先需要先安装才能用(npm install ejs)</li>
+</ul>
+<h5 id="1-指定渲染模板引擎-app-set-‘view-engine’-’ejs’"><a href="#1-指定渲染模板引擎-app-set-‘view-engine’-’ejs’" class="headerlink" title="1.指定渲染模板引擎: app.set(‘view engine’,’ejs’)"></a>1.指定渲染模板引擎: app.set(‘view engine’,’ejs’)</h5><h5 id="2-设置放模板文件的目录-app-set-‘views’-path-join-dirname-’-‘"><a href="#2-设置放模板文件的目录-app-set-‘views’-path-join-dirname-’-‘" class="headerlink" title="2.设置放模板文件的目录:app.set(‘views’,path.join(__dirname,’/‘))"></a>2.设置放模板文件的目录:app.set(‘views’,path.join(__dirname,’/‘))</h5><h5 id="3-render函数-对网页模板进行渲染-在渲染模板时locals可谓其模板传入变量值-在模板中就可以条用所传变量了-res-render-view-local-callback"><a href="#3-render函数-对网页模板进行渲染-在渲染模板时locals可谓其模板传入变量值-在模板中就可以条用所传变量了-res-render-view-local-callback" class="headerlink" title="3.render函数,对网页模板进行渲染,在渲染模板时locals可谓其模板传入变量值,在模板中就可以条用所传变量了:res.render(view,[local],callback"></a>3.render函数,对网页模板进行渲染,在渲染模板时locals可谓其模板传入变量值,在模板中就可以条用所传变量了:res.render(view,[local],callback</h5><p>案例：</p>
+<pre><code>app.set(&quot;view engine&quot;,&quot;ejs&quot;);
+app.set(&quot;views&quot;,_dirname);//放在当前目录下
+app.get(&quot;/&quot;,function(req,res){
+    //默认模板文件后缀格式是ejs
+    res.render(&quot;muban&quot;,{
+        name:&quot;tangcaiye&quot;,
+        age:18
+    });
+});
+</code></pre><ul>
+<li>cookie:首先需要安装cookie-parser模块</li>
+</ul>
+<p>案例：</p>
+<pre><code>var express=require(&quot;express&quot;);
+var cookieParser=require(&quot;cookie-parser&quot;);
+var app=express();
+app.use(cookieParser());
+app.get(“/”,function(rea,res){
+//如果请求中cookie存在visited，则输出cookie
+//否则，设置cookie字段visited，并设置过期时间
+    if(req.cookies.visited){
+        res.send(&quot;已访问过&quot;);
+    }else{
+        res.cookie(&quot;visited&quot;,&quot;1&quot;,{express:newData maxAge:10*60*1000});
+        res.send(&quot;第一次访问&quot;);
+    }
+});
+app.listen(8989);
+</code></pre><h4 id="mongoose模块（mongoose）"><a href="#mongoose模块（mongoose）" class="headerlink" title="mongoose模块（mongoose）"></a>mongoose模块（mongoose）</h4><h5 id="首先用npm包管理工具安装mongoose模块"><a href="#首先用npm包管理工具安装mongoose模块" class="headerlink" title="首先用npm包管理工具安装mongoose模块"></a>首先用npm包管理工具安装mongoose模块</h5><p><img src="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/图11.png" alt="图2"></p>
+<p><img src="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/图22.png" alt="图3"></p>
+<p><img src="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/图33.png" alt="图4"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/02/node.js框架的基础使用/" data-id="civ0v28660005aiz2yms3gcyj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/11/02/ css3的less框架和媒体查询/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">css3的less框架和媒体查询</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/11/02/node.js框架的基础使用/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/02/ css3的less框架和媒体查询/">css3的less框架和媒体查询</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/02/mongodb/">mongodb</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/05/PHP第一篇/">PHP第一篇</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/14/js阶段第三篇/">js阶段第三篇</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 鲁玲玲<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

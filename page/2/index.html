@@ -64,6 +64,157 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-第五篇" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/28/第五篇/" class="article-date">
+  <time datetime="2016-06-28T13:57:27.000Z" itemprop="datePublished">2016-06-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/28/第五篇/">第五篇</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="css3选择器"><a href="#css3选择器" class="headerlink" title="css3选择器"></a>css3选择器</h2><h3 id="子元素选择器-E-gt-F"><a href="#子元素选择器-E-gt-F" class="headerlink" title="子元素选择器(E &gt; F)"></a>子元素选择器(E &gt; F)</h3><ul>
+<li>子元素选择器 :选中的是子元素F 孙辈不会被选</li>
+</ul>
+<h3 id="相邻兄弟选择器-E-＋-F"><a href="#相邻兄弟选择器-E-＋-F" class="headerlink" title="相邻兄弟选择器(E ＋ F)"></a>相邻兄弟选择器(E ＋ F)</h3><ul>
+<li>只会选择相邻的兄弟级别的<br>1.必须是同级的<br>2.必须是相邻的<br>3.必须是在下方<br>4.有且只有一个符合</li>
+</ul>
+<h3 id="通用兄弟选择器-E-F"><a href="#通用兄弟选择器-E-F" class="headerlink" title="通用兄弟选择器(E ~ F)"></a>通用兄弟选择器(E ~ F)</h3><ul>
+<li>只会选择相邻的兄弟级别的<br>1.必须是同级的<br>2.必须是在下方<br>3.可以有多个符合</li>
+</ul>
+<h3 id="通用兄弟选择器：一般用于表单"><a href="#通用兄弟选择器：一般用于表单" class="headerlink" title="通用兄弟选择器：一般用于表单"></a>通用兄弟选择器：一般用于表单</h3><ul>
+<li><p>E[attr]</p>
+</li>
+<li><p>E[attr=“value”] </p>
+</li>
+<li><p>E[attr~=“value”] ~：表示几个以空格隔开的属性值中包含了“value”</p>
+</li>
+<li><p>E[attr^=“value”] ^:以value开头的值(ps:可以是一个值也可以是一个类名的首字母)  </p>
+</li>
+<li><p>E[attr$=“value”] $:以value结尾的值(ps:是一个类名的最后一个字母或者数字等) </p>
+</li>
+<li><p>E[attr=“value”] *:包含了value的值(ps:由于浏览器的这个星号不识别 所以语句上面有点问题   这边就在这演示一下)</p>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+[class*=&quot;div0&quot;]{
+color:blue;
+border:1px red solid;
+}
+&lt;/style&gt;
+</code></pre></li>
+</ul>
+<pre><code>&lt;div class=&quot;div0&quot;&gt;
+&lt;h2&gt;我是第一个h2&lt;/h2&gt;
+&lt;div class=&quot;div0div1&quot;&gt;
+    &lt;h2&gt;我是第二个h2&lt;/h2&gt;
+    &lt;span&gt;我是第一个span&lt;/span&gt;
+&lt;/div&gt;
+&lt;h3&gt;我是第一个h3&lt;/h3&gt;
+&lt;h3&gt;我是第二个h3&lt;/h3&gt;
+&lt;/div&gt;
+</code></pre><p><img src="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/带有星号的选择器运行后.jpg" alt="运行结果"></p>
+<ul>
+<li>E[attr|=“value”] |: 以value或value-开头<h5 id="E-attr-”value”-和E-attr-”value”-是最实用的"><a href="#E-attr-”value”-和E-attr-”value”-是最实用的" class="headerlink" title="E[attr=”value”]和E[attr*=”value”]是最实用的"></a>E[attr=”value”]和E[attr*=”value”]是最实用的</h5></li>
+</ul>
+<h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><h5 id="锚点伪类"><a href="#锚点伪类" class="headerlink" title="锚点伪类"></a>锚点伪类</h5><h5 id="UI元素伪类-表单元素-ps-下面主要介绍的表单元素的伪类"><a href="#UI元素伪类-表单元素-ps-下面主要介绍的表单元素的伪类" class="headerlink" title="UI元素伪类 表单元素(ps:下面主要介绍的表单元素的伪类)"></a>UI元素伪类 表单元素(ps:下面主要介绍的表单元素的伪类)</h5><ul>
+<li><p>:focus聚焦  </p>
+</li>
+<li><p>:disabled表示元素不可用，input元素必须要有disabled属性(ps:表单会暗下去，点击不了)</p>
+</li>
+<li><p>:enabled表示可用状态与disabled完全相反</p>
+</li>
+<li><p>:checked有display：block属性</p>
+</li>
+</ul>
+<pre><code>input:focus{}
+input:disabled{}
+input:checked{}
+input:enabled{
+        color: blue;
+        }
+</code></pre><h3 id="否定选择器-not-通常配合属性选择器一起使用"><a href="#否定选择器-not-通常配合属性选择器一起使用" class="headerlink" title="否定选择器 :not( )  通常配合属性选择器一起使用"></a>否定选择器 :not( )  通常配合属性选择器一起使用</h3><pre><code>input:not([type=&quot;submit&quot;]) {border: 1px solid red;}
+
+意思是除了类型为submit的类型
+</code></pre><h3 id="nth-选择器"><a href="#nth-选择器" class="headerlink" title=":nth 选择器"></a>:nth 选择器</h3><ul>
+<li><p>:first-child 选择某个元素的第一个子元素</p>
+</li>
+<li><p>:last-child 选择某个元素的最后一个子元素(ps:表示该级别的最后只能是该标签，该标签的同级别下面不能再有别的其他的标签)</p>
+</li>
+<li><p>:nth-last-child()选择某个元素的一个或多个特定的子元素，从这个元素的最后一个子元素开始算；(ps:括号里面填写数字，例：是数字2，则表示倒数第二个)</p>
+</li>
+<li><p>:nth-of-type()选择指定的元素；</p>
+</li>
+<li><p>:nth-last-of-type()选择指定的元素，从元素的最后一个开始计算；（ps:不能跨级对比，在兄弟级别的里面算，不能把父级跟子孙级别的算在一起,表示的是在该级别是最后一个该标签，但是该标签的下面还可以有别的标签）</p>
+</li>
+<li><p>:first-of-type选择一个上级元素下的第一个同类子元素；</p>
+</li>
+<li><p>:last-of-type选择一个上级元素的最后一个同类子元素；</p>
+</li>
+<li><p>:only-child选择的元素是它的父元素的唯一一个子元素；</p>
+</li>
+<li><p>:only-of-type选择一个元素是它的上级元素的唯一一个相同类型的子元素；</p>
+</li>
+<li><p>:empty选择的元素里面没有任何内容。</p>
+</li>
+</ul>
+<h5 id="nth-child-选择某个元素的一个或多个特定的子元素；"><a href="#nth-child-选择某个元素的一个或多个特定的子元素；" class="headerlink" title=":nth-child()选择某个元素的一个或多个特定的子元素；"></a>:nth-child()选择某个元素的一个或多个特定的子元素；</h5><h5 id="nth-child-length-参数是具体数字-ps-length是具体的数字"><a href="#nth-child-length-参数是具体数字-ps-length是具体的数字" class="headerlink" title=":nth-child(length);/参数是具体数字/(ps:length是具体的数字)"></a>:nth-child(length);/<em>参数是具体数字</em>/(ps:length是具体的数字)</h5><h5 id="nth-child-n-参数是n-n从1开始计算-ps-里面就是填写n-代表所有的"><a href="#nth-child-n-参数是n-n从1开始计算-ps-里面就是填写n-代表所有的" class="headerlink" title=":nth-child(n);/参数是n,n从1开始计算/(ps:里面就是填写n,代表所有的)"></a>:nth-child(n);/<em>参数是n,n从1开始计算</em>/(ps:里面就是填写n,代表所有的)</h5><h5 id="nth-child-2n-n的倍数选择，n从1开始算"><a href="#nth-child-2n-n的倍数选择，n从1开始算" class="headerlink" title=":nth-child(2n); /n的倍数选择，n从1开始算/"></a>:nth-child(2n); /<em>n的倍数选择，n从1开始算</em>/</h5><h5 id="nth-child-n-length-选择大于等于length后面的元素"><a href="#nth-child-n-length-选择大于等于length后面的元素" class="headerlink" title=":nth-child(n+length); /选择大于等于length后面的元素/"></a>:nth-child(n+length); /<em>选择大于等于length后面的元素</em>/</h5><h5 id="nth-child-n-length-选择小于等于length前面的元素"><a href="#nth-child-n-length-选择小于等于length前面的元素" class="headerlink" title=":nth-child(-n+length); /选择小于等于length前面的元素/"></a>:nth-child(-n+length); /<em>选择小于等于length前面的元素</em>/</h5><h5 id="nth-child-2n-1-表示隔几选一-odd-even-ps-odd是奇数-even是偶数"><a href="#nth-child-2n-1-表示隔几选一-odd-even-ps-odd是奇数-even是偶数" class="headerlink" title=":nth-child(2n+1); /表示隔几选一/ odd even(ps:odd是奇数    even是偶数)"></a>:nth-child(2n+1); /<em>表示隔几选一</em>/ odd even(ps:odd是奇数    even是偶数)</h5><h3 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h3><ul>
+<li><p>::first-letter 选择文本块的第一个字母，除非在同一行里面包含一些其它元素，不过这个主要运用于段落排版上多</p>
+</li>
+<li><p>::first-line 选择元素的第一行</p>
+</li>
+<li><p>::before,::after 这两个主要用来给元素的前面或后面插入内容，这两个常用”content”配合使用，见过最多的就是清除浮动还有图片icon</p>
+</li>
+<li><p>::selection用来改变浏览网页选中文本的默认效果“::selection”来改变在浏览器中选中文本后的背景色与前景色。::selection在IE家族中，只有IE9+版本支持，在Firefox中需要加上其前缀“-moz”，:“::selection”只能设置两个属性，一个就是background,另一个就是color属性，设置其他属性是没有任何效果的。</p>
+</li>
+</ul>
+<h3 id="css3盒子模型"><a href="#css3盒子模型" class="headerlink" title="css3盒子模型"></a>css3盒子模型</h3><h6 id="box-sizing-content-box-默认值-border-box（包含边框和padding）-padding-box-ps-padding-box只有在火狐浏览器才支持，而且也只支持pc端，border-box在IE浏览器不支持"><a href="#box-sizing-content-box-默认值-border-box（包含边框和padding）-padding-box-ps-padding-box只有在火狐浏览器才支持，而且也只支持pc端，border-box在IE浏览器不支持" class="headerlink" title="box-sizing:content-box(默认值)  || border-box（包含边框和padding）  || padding-box(ps:padding-box只有在火狐浏览器才支持，而且也只支持pc端，border-box在IE浏览器不支持)"></a>box-sizing:content-box(默认值)  || border-box（包含边框和padding）  || padding-box(ps:padding-box只有在火狐浏览器才支持，而且也只支持pc端，border-box在IE浏览器不支持)</h6><pre><code>    &lt;style type=&quot;text/css&quot;&gt;
+    div{
+        background: red;
+        font-size: 45px;
+        color: white;
+        width: 300px;
+        height:300px;
+        }
+&lt;/style&gt;
+
+    &lt;div style=&quot;box-sizing:border-box;outline:10px         blue solid;border:10px pink solid;&quot;&gt;
+        我是div1
+    &lt;/div&gt;
+    &lt;hr&gt;
+    &lt;div&gt;我是div2&lt;/div&gt;
+</code></pre><p><img src="https://github.com/lulingliing/lulingliing.github.io/raw/master/images/border-box.jpg" alt="border-box运行结果"></p>
+<ul>
+<li><p>设置了border-box，就算设置了边框也是包含在内容里面的，不会改变原来盒子的宽高</p>
+</li>
+<li><p>设置了padding-box之后，设置padding也不会影响容器的大小。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/28/第五篇/" data-id="civ0v2872000baiz24p6wvod6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-第四篇" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/06/27/第四篇/" class="article-date">
@@ -162,7 +313,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/27/第四篇/" data-id="civ0nl3kt000d2jz25oc5ndki" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/27/第四篇/" data-id="civ0v287f000daiz2t8m40huf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -245,7 +396,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/27/第三篇/" data-id="civ0nl3kl00092jz2psywxqva" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/27/第三篇/" data-id="civ0v286w0009aiz2asryir18" class="article-share-link">Share</a>
       
       
     </footer>
@@ -372,7 +523,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/23/第二篇/" data-id="civ0nl3ki00082jz21n44bqsb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/23/第二篇/" data-id="civ0v286z000aaiz25z76ye0d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -439,7 +590,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/22/第一篇/" data-id="civ0nl3kc00062jz2q8f1z1so" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/22/第一篇/" data-id="civ0v287g000eaiz2dlyj9yyt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -484,7 +635,7 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/22/hello-world/" data-id="civ0nl3k500022jz21c20rjj1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/22/hello-world/" data-id="civ0v285n0001aiz2fa6g4uum" class="article-share-link">Share</a>
       
       
     </footer>
@@ -528,6 +679,10 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
       <ul>
         
           <li>
+            <a href="/2016/11/02/node.js框架的基础使用/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2016/11/02/ css3的less框架和媒体查询/">css3的less框架和媒体查询</a>
           </li>
         
@@ -541,10 +696,6 @@ datetime=“YYYY-MM-DDThh:mm:ssTZD”
         
           <li>
             <a href="/2016/07/14/js阶段第三篇/">js阶段第三篇</a>
-          </li>
-        
-          <li>
-            <a href="/2016/07/14/js阶段第二篇/">js阶段第二篇</a>
           </li>
         
       </ul>
