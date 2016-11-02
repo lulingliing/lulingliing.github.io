@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>css3的less框架和媒体查询 | Somnus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="less文件参考网址：http://www.bootcss.com/p/lesscss/
+变量能够直接当做属性值使用@color：green；
+#header{
+color：@color;
+}
+变量也能够在复合属性中使用@color：green；
+#header{
+border:10px @color solid;
+}
+变量无参数的混用@color:green;
+.classA{
+    back">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css3的less框架和媒体查询">
+<meta property="og:url" content="http://yoursite.com/2016/11/02/ css3的less框架和媒体查询/index.html">
+<meta property="og:site_name" content="Somnus">
+<meta property="og:description" content="less文件参考网址：http://www.bootcss.com/p/lesscss/
+变量能够直接当做属性值使用@color：green；
+#header{
+color：@color;
+}
+变量也能够在复合属性中使用@color：green；
+#header{
+border:10px @color solid;
+}
+变量无参数的混用@color:green;
+.classA{
+    back">
+<meta property="og:updated_time" content="2016-11-02T08:10:13.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css3的less框架和媒体查询">
+<meta name="twitter:description" content="less文件参考网址：http://www.bootcss.com/p/lesscss/
+变量能够直接当做属性值使用@color：green；
+#header{
+color：@color;
+}
+变量也能够在复合属性中使用@color：green；
+#header{
+border:10px @color solid;
+}
+变量无参数的混用@color:green;
+.classA{
+    back">
+  
+    <link rel="alternate" href="/atom.xml" title="Somnus" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Somnus</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post- css3的less框架和媒体查询" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/02/ css3的less框架和媒体查询/" class="article-date">
+  <time datetime="2016-11-02T08:10:13.000Z" itemprop="datePublished">2016-11-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      css3的less框架和媒体查询
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="less文件"><a href="#less文件" class="headerlink" title="less文件"></a>less文件</h2><p>参考网址：<a href="http://www.bootcss.com/p/lesscss/" target="_blank" rel="external">http://www.bootcss.com/p/lesscss/</a></p>
+<h5 id="变量能够直接当做属性值使用"><a href="#变量能够直接当做属性值使用" class="headerlink" title="变量能够直接当做属性值使用"></a>变量能够直接当做属性值使用</h5><pre><code>@color：green；
+#header{
+color：@color;
+}
+</code></pre><h5 id="变量也能够在复合属性中使用"><a href="#变量也能够在复合属性中使用" class="headerlink" title="变量也能够在复合属性中使用"></a>变量也能够在复合属性中使用</h5><pre><code>@color：green；
+#header{
+border:10px @color solid;
+}
+</code></pre><h5 id="变量无参数的混用"><a href="#变量无参数的混用" class="headerlink" title="变量无参数的混用"></a>变量无参数的混用</h5><pre><code>@color:green;
+.classA{
+    background:@color;
+}
+#header{
+    .classA;
+}
+</code></pre><h5 id="变量有参数的混用"><a href="#变量有参数的混用" class="headerlink" title="变量有参数的混用"></a>变量有参数的混用</h5><pre><code>.wrap{
+    .trs(all;3s;ease;0s);
+}
+.trs(@property;@duration;@timing-function;@delay){
+    transition:@property @duration @timing-function     @delay;
+}
+</code></pre><h5 id="嵌套规则"><a href="#嵌套规则" class="headerlink" title="嵌套规则"></a>嵌套规则</h5><pre><code>#header {
+h1 {
+    font-size: 26px;
+    font-weight: bold;
+}
+p { font-size: 12px;
+    a { text-decoration: none;
+   &amp;:hover { border-width: 1px }
+  }
+}
+ }
+</code></pre><h4 id="函数和运算"><a href="#函数和运算" class="headerlink" title="函数和运算"></a>函数和运算</h4><p>我们可以做属性值和颜色的运算，这样就可以实现属性值之间的复杂关系。</p>
+<pre><code>@the-border: 1px;
+@base-color: #111;
+@red:  #842210;
+#header {
+color: @base-color * 3;
+border-left: @the-border;
+border-right: @the-border * 2;
+}
+</code></pre><h4 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h4><h5 id="方式一：在link标签里面写"><a href="#方式一：在link标签里面写" class="headerlink" title="方式一：在link标签里面写"></a>方式一：在link标签里面写</h5><pre><code>&lt;link rel=&quot;stylesheet&quot; media=&quot;only screen and (min-    width:750px)&quot; href=&quot;css/        c.css&quot; /&gt;
+</code></pre><h5 id="方式二：在css里面写或者在style样式里面写"><a href="#方式二：在css里面写或者在style样式里面写" class="headerlink" title="方式二：在css里面写或者在style样式里面写"></a>方式二：在css里面写或者在style样式里面写</h5><pre><code>@media only screen and (min-width: ) {}
+bootstrap
+</code></pre><p>参考网址：<a href="http://v3.bootcss.com/" target="_blank" rel="external">http://v3.bootcss.com/</a></p>
+<p>swiper的使用(主要用于轮播图的播放)<br>Swiper常用于移动端网站的内容触摸滑动</p>
+<p>Swiper是纯javascript打造的滑动特效插件，面向手机、平板电脑等移动终端。</p>
+<p>Swiper能实现触屏焦点图、触屏Tab切换、触屏多图切换等常用效果。<br>Swiper开源、免费、稳定、使用简单、功能强大，是架构移动终端网站的重要选择！</p>
+<p>参考网址：<a href="http://www.swiper.com.cn" target="_blank" rel="external">http://www.swiper.com.cn</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/02/ css3的less框架和媒体查询/" data-id="civ0nic0000011uz2tuxece0t" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/11/02/mongodb/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">mongodb</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/11/02/ css3的less框架和媒体查询/">css3的less框架和媒体查询</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/02/mongodb/">mongodb</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/05/PHP第一篇/">PHP第一篇</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/14/js阶段第三篇/">js阶段第三篇</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/14/js阶段第二篇/">js阶段第二篇</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 鲁玲玲<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

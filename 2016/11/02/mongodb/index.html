@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>mongodb | Somnus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="mongodb首先介绍一下homebrew：brew是一个Mac系统下的软件包管理工具，先安装brew，参考Homebrew官网的安装方法，终端下命令：ruby -e “$(curl -fsSkL raw.github.com/mxcl/homebrew/go)”
+安装完brew后先在终端更新一下：brew update
+然后安装mongodb：brew install mongodb
+mongo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mongodb">
+<meta property="og:url" content="http://yoursite.com/2016/11/02/mongodb/index.html">
+<meta property="og:site_name" content="Somnus">
+<meta property="og:description" content="mongodb首先介绍一下homebrew：brew是一个Mac系统下的软件包管理工具，先安装brew，参考Homebrew官网的安装方法，终端下命令：ruby -e “$(curl -fsSkL raw.github.com/mxcl/homebrew/go)”
+安装完brew后先在终端更新一下：brew update
+然后安装mongodb：brew install mongodb
+mongo">
+<meta property="og:updated_time" content="2016-11-02T08:13:31.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mongodb">
+<meta name="twitter:description" content="mongodb首先介绍一下homebrew：brew是一个Mac系统下的软件包管理工具，先安装brew，参考Homebrew官网的安装方法，终端下命令：ruby -e “$(curl -fsSkL raw.github.com/mxcl/homebrew/go)”
+安装完brew后先在终端更新一下：brew update
+然后安装mongodb：brew install mongodb
+mongo">
+  
+    <link rel="alternate" href="/atom.xml" title="Somnus" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Somnus</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-mongodb" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/02/mongodb/" class="article-date">
+  <time datetime="2016-11-02T07:56:53.000Z" itemprop="datePublished">2016-11-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      mongodb
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="mongodb"><a href="#mongodb" class="headerlink" title="mongodb"></a>mongodb</h2><p>首先介绍一下homebrew：brew是一个Mac系统下的软件包管理工具，先安装brew，参考Homebrew官网的安装方法，终端下命令：<br>ruby -e “$(curl -fsSkL raw.github.com/mxcl/homebrew/go)”</p>
+<p>安装完brew后先在终端更新一下：brew update</p>
+<p>然后安装mongodb：brew install mongodb</p>
+<h3 id="mongodb的使用（终端下的指令）"><a href="#mongodb的使用（终端下的指令）" class="headerlink" title="mongodb的使用（终端下的指令）"></a>mongodb的使用（终端下的指令）</h3><h4 id="在终端启动："><a href="#在终端启动：" class="headerlink" title="在终端启动："></a>在终端启动：</h4><p>mongod —dbpath=数据库地址<br>再在终端中键入mongo</p>
+<h4 id="数据库的操作："><a href="#数据库的操作：" class="headerlink" title="数据库的操作："></a>数据库的操作：</h4><p>1.创建数据库：use database_name</p>
+<p>2.查看所有数据库：show dbs</p>
+<p>3.查看当前使用的数据库：db 或 db.getName()</p>
+<p>4.删除数据库：db.dropDatabase()</p>
+<p>5.断开连接：exit</p>
+<p>6.查看命令api：help</p>
+<h4 id="集合的操作"><a href="#集合的操作" class="headerlink" title="集合的操作"></a>集合的操作</h4><h5 id="1、查看帮助api：db-worker-help"><a href="#1、查看帮助api：db-worker-help" class="headerlink" title="1、查看帮助api：db.worker.help()"></a>1、查看帮助api：db.worker.help()</h5><p>￼</p>
+<h5 id="2、查看当前数据库下有哪集合（collection）：show-collections"><a href="#2、查看当前数据库下有哪集合（collection）：show-collections" class="headerlink" title="2、查看当前数据库下有哪集合（collection）：show collections"></a>2、查看当前数据库下有哪集合（collection）：show collections</h5><p>￼</p>
+<h5 id="3、创建集合（collection）"><a href="#3、创建集合（collection）" class="headerlink" title="3、创建集合（collection）"></a>3、创建集合（collection）</h5><p>//法1：db.createCollection(“collection_Name”)</p>
+<p>//法2： db.collection_Name.insert(document)</p>
+<p>注：两者的区别在于前者创建了一个空的集合，后者创建了一个空的集合并添加了一个Document数据</p>
+<h5 id="4、删除当前数据库中的集合（collection）：db-collection-Name-drop"><a href="#4、删除当前数据库中的集合（collection）：db-collection-Name-drop" class="headerlink" title="4、删除当前数据库中的集合（collection）：db.collection_Name.drop()"></a>4、删除当前数据库中的集合（collection）：db.collection_Name.drop()</h5><h5 id="5、插入文档"><a href="#5、插入文档" class="headerlink" title="5、插入文档"></a>5、插入文档</h5><p>使用insert()方法插入文档：</p>
+<pre><code>db.collection_name.insert(document)
+
+db.worker.insert([{name:’wangWu’,age:50},        {name:’xiaoMing’,age:60}])
+</code></pre><p>￼<br>使用save()方法插入文档</p>
+<pre><code>db.collection_name.save(document)
+</code></pre><p>注：如果不指定 _id 字段 save() 方法类似于 insert() 方法。如果指定 _id 字段，则会更新该 _id 的数据。</p>
+<pre><code>db.person.save({name:”xiaoHong”,age:50})
+
+db.person.save({_id:ObjectId(“562c9caf671c978b6596e825”),name:”xiaoHong”,age:10})
+</code></pre><h5 id="6、更新文档"><a href="#6、更新文档" class="headerlink" title="6、更新文档"></a>6、更新文档</h5><p>update()方法用于更新已存在的文档</p>
+<pre><code>db.collection.update(query,update,{upset:     boolean,multi: boolean,writeConcern: document})
+</code></pre><p>参数说明：</p>
+<p>query : update的查询条件，类似sql update查询内where后面的。</p>
+<p>update : update的对象和一些更新的操作符（如$set,$inc…）等 $inc在原基础上累加后更新 $set直接更新</p>
+<p>upsert : 可选，这个参数的意思是，如果不存在update的记录，是否插入objNew,true为插入，默认是false，不插入。</p>
+<p>multi : 可选，mongodb 默认是false,只更新找到的第一条记录，如果这个参数为true,就把按条件查出来多条记录全部更新。</p>
+<p>writeConcern :可选，抛出异常的级别。</p>
+<p>实例</p>
+<pre><code>db.worker.update({name:’liSi’},{$set:            {name:’liSi_update’}}) ￼
+db.worker.update({name:’liSi_update’}, {$set: {age:    40}},{multi:true}) ￼
+db.worker.update({name:’liSi_update’},{$inc:{age:1}})     2.save()方法通过传入的文档来替换已有文档
+</code></pre><p>save（）方法实现文档更新：</p>
+<p>db.collection.save(document,{writeConcern: document})</p>
+<p>参数说明：<br>document : 文档数据。<br>writeConcern :可选，抛出异常的</p>
+<p>实例</p>
+<pre><code>db.person.save({_id:ObjectId(“562c9caf671c978b6596e825”),name:”xiaoHong”,age:10})级别。
+</code></pre><h5 id="7、文档删除"><a href="#7、文档删除" class="headerlink" title="7、文档删除"></a>7、文档删除</h5><p>remove()方法是用来移除集合中的数据。</p>
+<h6 id="注：在执行remove-函数前先执行find-命令来判断执行的条件是否正确，这是一个比较。"><a href="#注：在执行remove-函数前先执行find-命令来判断执行的条件是否正确，这是一个比较。" class="headerlink" title="注：在执行remove()函数前先执行find()命令来判断执行的条件是否正确，这是一个比较。"></a>注：在执行remove()函数前先执行find()命令来判断执行的条件是否正确，这是一个比较。</h6><p>语法：db.collection.remove（query，justOne)<br>如果你的 MongoDB 是 2.6 版本以后的</p>
+<p>语法格如：db.collection.remove(query, {justOne: boolean,writeConcern: document}</p>
+<p>参数说明：<br>query :（可选）删除的文档的条件。<br>justOne : （可选）如果设为 true 或 1，则只删除一个文档。<br>writeConcern :（可选）抛出异常实例</p>
+<p>实例</p>
+<pre><code>db.worker.remove({name:’fJianZhou’}) 删除worker集合里    name是fJianZhou的所有Document数据
+db.person.remove({name:”xiaoHong”},1)  删除person集合    里name是xiaoHong的第一条数据_name 集合的名字
+</code></pre><h6 id="8、文档查询"><a href="#8、文档查询" class="headerlink" title="8、文档查询"></a>8、文档查询</h6><p>（1.）find()方法：db.collection_name.find() collection_name 集合的名字</p>
+<p>￼<br>（2.）find()方法 查询指定列：<br>实例</p>
+<pre><code>db.worker.find({},{age:1}) 查询指定列 
+</code></pre><p>￼<br>（3.）pretty()方法以格式化的方式来显示所有文档。</p>
+<p>实例</p>
+<pre><code>db.worker.find().pretty()
+</code></pre><p>￼<br>（4.）findOne()方法查询匹配结果的第一条数据</p>
+<h5 id="9、查询条件操作符"><a href="#9、查询条件操作符" class="headerlink" title="9、查询条件操作符"></a>9、查询条件操作符</h5><p>￼<br>（1）MongoDB (&gt;) 大于操作符 - $gt</p>
+<p>语法：db.collectionName.find({:{$gt:}})———-collectionName集合名词 key字段 value值</p>
+<p>实例<br>db.worker.find({age:{$gt:30}})———– 查询age 大于 30的数据</p>
+<p>￼<br>（2）MongoDB（&gt;=）大于等于操作符 - $gte</p>
+<p>语法:db.collectionName.find({:{$gte:}})———- collectionName集合名词 key字段 value值</p>
+<p>实例:db.worker.find({age: {$gte: 30}})———– 查询age 3大于等于30 的数据</p>
+<p>￼<br>（3）MongoDB (&lt;) 小于操作符 - $lt</p>
+<p>语法：db.collectionName.find( {:{$lt:}})———- collectionName集合名词 key字段 value值</p>
+<p>实例：db.worker.find({age: {$lt: 30}})———— 查询age 小于30的数据</p>
+<p>￼<br>（4）MongoDB (&lt;=) 小于等于操作符 - $lte</p>
+<p>语法：</p>
+<p>db.collectionName.find({:{$lte:}})———– collectionName集合名词 key字段 value值</p>
+<p>实例：<br>db.worker.find({age: {$lte: 30}}) ————查询age 小于等于30的数据</p>
+<p>￼<br>（5）MongoDB 使用 (&gt;=) 和 (&lt;=) 查询 - $gte 和 $lte</p>
+<p>语法：<br>db.collectionName.find({:{$gte:},:{$lte:}})———– collectionName集合名词 key字段 value值</p>
+<p>实例：<br>db.worker.find({age: {$gte: 30, $lte: 50}}) ———–查询age 大于等于 30 并且 age 小于等于 50 的数据<br>￼</p>
+<p>（6）MongoDB 等于（==）</p>
+<p>语法：<br>db.collectionName.find({:,:}) ————- collectionName集合名词 key字段 value值</p>
+<p>实例：<br>db.worker.find({“age”: 30})————查询age = 30的数据<br>￼</p>
+<p>（7）MongoDB 使用 _id进行查询</p>
+<p>语法：<br>db.collectionName.find({“_id” : ObjectId(“value”)}) ———–value _id的值</p>
+<p>实例：<br>db.worker.find({“_id” : ObjectId(“562af23062d5a57609133974”)})———— 查询_id是 562af23062d5a57609133974 数据<br>￼</p>
+<p>（8）MongoDB 查询某个结果集的数据的条数</p>
+<p>语法：<br>db.collectionName.find().count() ————- collectionName集合名称</p>
+<p>实例：<br>db.worker.find().count()<br>￼</p>
+<p>（9）MongoDB 查询某个字段的值当中是否包含另一个值</p>
+<p>语法：<br>db.collection.find({key:/value/}) ————– collectionName集合名称 key 字段 value值</p>
+<p>实例：<br>db.worker.find({name:/value/}) ————-查询name里包含zhang的数据</p>
+<p>￼（10）MongoDB 查询某个字段的值当中是否以另一个值开头</p>
+<p>语法：<br>db.collection.find({key:/^value/})————collectionName集合名称 key 字段 value值</p>
+<p>实例：<br>db.worker.find({name:/^zhang/})</p>
+<p>（11）MongoDB 使用and和or条件查询<br>//and语法：db.worker.find({name:’tangcaiye’,age:30}) 查询name是tangcaiye并且age是30的数据</p>
+<p>//or语法：db.worker.find({$or:[{age = 30},{age = 50}]}) 查询age = 30 或者 age = 50 的数据</p>
+<p>//AND 和 OR 联合使用语法：</p>
+<p>db.worker.find({name:’tangcaiye’,$or:[{age:30},{age:50}]})</p>
+<h5 id="10、MongoDB-Limit与Skip方法"><a href="#10、MongoDB-Limit与Skip方法" class="headerlink" title="10、MongoDB Limit与Skip方法"></a>10、MongoDB Limit与Skip方法</h5><p>1.Limit() 方法 ，读取指定数量的数据记录</p>
+<p>语法：<br>db.collectionName.find().limit(number)——–collectionName集合 number读取的条数</p>
+<p>实例：<br>db.worker.find().limit(3)—– 查询前3条数据</p>
+<p>2.MongoDB Skip() 方法 跳过指定数量的数据。</p>
+<p>语法：<br>db.collectionName.find().skip(number)——–collectionName集合 number跳过的条数</p>
+<p>实例：<br>db.worker.find().skip(3)——–查询3条以后的数据<br>￼</p>
+<p>3.MongoDB Skip()方法和Limit()方法混合使用<br>注： 通常用这种方式来实现分页功能</p>
+<p>语法<br>db.collectionName.find().limit(number).skip(number)</p>
+<p>实例<br>db.worker.find().sort({age:-1})——- 查询在4-6之间的数据</p>
+<h5 id="11、排序"><a href="#11、排序" class="headerlink" title="11、排序"></a>11、排序</h5><p>MongoDB sort()方法可以通过参数指定排序的字段，其中 1 为升序排列，而-1是用于降序排列。</p>
+<p>语法：</p>
+<p>db.collectionName.find().sort({KEY:1}) 或者 db.collectionName.find().sort({KEY:-1})——-collectionName集合 key表示字段</p>
+<p>实例：</p>
+<p>db.worker.find().sort({age:1})——-查询出并升序排序 {age:1} age表示按那个字段排序 1表示升序</p>
+<p>db.worker.find().sort({age:-1})——-查询出并降序排序 {age:-1} age表示按那个字段排序 -1表示降序</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/02/mongodb/" data-id="civ0nic0700031uz2an7wb86a" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/11/02/ css3的less框架和媒体查询/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          css3的less框架和媒体查询
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/09/05/PHP第一篇/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">PHP第一篇</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/11/02/ css3的less框架和媒体查询/">css3的less框架和媒体查询</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/02/mongodb/">mongodb</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/05/PHP第一篇/">PHP第一篇</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/14/js阶段第三篇/">js阶段第三篇</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/14/js阶段第二篇/">js阶段第二篇</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 鲁玲玲<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
